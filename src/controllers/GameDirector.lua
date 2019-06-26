@@ -28,6 +28,10 @@ function GameDirector:new()
         libraries = {
             MoonJohn = MoonJohn, Sanghost = Sanghost, Pixelurite = Pixelurite,
             ButtonManager = ButtonManager
+        },
+        fonts = {
+            default = love.graphics.getFont(),
+            ledDigits = love.graphics.newFont("assets/fonts/DS-DIGII.ttf", 36)
         }
     }
     return setmetatable(this, GameDirector)
@@ -39,6 +43,10 @@ end
 
 function GameDirector:getLibrary(library)
     return self.libraries[library]
+end
+
+function GameDirector:getFonts()
+    return self.fonts
 end
 
 function GameDirector:keypressed(key, scancode, isrepeat)

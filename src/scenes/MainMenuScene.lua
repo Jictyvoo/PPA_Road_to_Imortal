@@ -20,7 +20,7 @@ end
 function MainMenuScene:new()
     local this = {
         background = love.graphics.newImage("assets/textures/menu_background.png"),
-        music = love.audio.newSource("assets/sounds/tt_menu_music.mp3", "static"),
+        music = love.audio.newSource("assets/sounds/crazy_little_ears.mp3", "static"),
         buttonManager = gameDirector:getLibrary("ButtonManager"):new(),
         buttonsImage = nil, buttonsQuads = nil,
         buttonNames = {}
