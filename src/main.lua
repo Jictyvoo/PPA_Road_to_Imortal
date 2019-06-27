@@ -3,11 +3,13 @@ function love.load()
     love.graphics.setDefaultFilter('nearest', 'nearest')
     scaleDimension = require "util.ScaleDimension":new(); scaleDimension:setGameScreenScale(800, 600)
     gameDirector = require "controllers.GameDirector":new()
+    love.graphics.setFont(gameDirector:getFonts().tovariSans)
     local inGame = require "scenes.InGameScene":new(gameDirector:getWorld().world)
     sceneDirector = gameDirector:getLibrary("MoonJohn").MoonJohn:new(require "scenes.SplashScreen":new())
     --Adding Scenes to SceneDirector
     sceneDirector:setDefaultTransition(function() return gameDirector:getLibrary("MoonJohn").Transitions:FadeOut() end)
 
+    sceneDirector:addScene("pressAny", require "scenes.PressAnyButton":new())
     sceneDirector:addScene("mainMenu", require "scenes.MainMenuScene":new())
     sceneDirector:addScene("credits", require "scenes.CreditsScene":new())
     --[[sceneDirector:addScene("configurations", require "scenes.ConfigurationScene":new())

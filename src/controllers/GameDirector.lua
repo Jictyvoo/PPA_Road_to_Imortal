@@ -12,7 +12,7 @@ local Pixelurite = require "libs.Pixelurite"
 --Controllers
 
 --Gui Components
-local ButtonManager = require "util.ui.ButtonManager"
+local Button = require "util.ui.Button"
 
 local GameDirector = {}
 
@@ -27,11 +27,11 @@ function GameDirector:new()
         --Libraries
         libraries = {
             MoonJohn = MoonJohn, Sanghost = Sanghost, Pixelurite = Pixelurite,
-            ButtonManager = ButtonManager
+            Button = Button
         },
         fonts = {
             default = love.graphics.getFont(),
-            ledDigits = love.graphics.newFont("assets/fonts/DS-DIGII.ttf", 36)
+            tovariSans = love.graphics.newFont("assets/fonts/TovariSans.ttf", 36)
         }
     }
     return setmetatable(this, GameDirector)

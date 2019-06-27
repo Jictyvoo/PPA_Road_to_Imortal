@@ -6,11 +6,10 @@ local addButton = function(this, buttonName, sceneName, buttonDimensions, origin
     local scaleButtonName = "menu" .. buttonName
     scaleDimension:calculeScales(scaleButtonName, unpack(buttonDimensions))
     scaleDimension:relativeScale(scaleButtonName, originalSize)
-    scaleDimension:centralize(scaleButtonName, true, false, false, false)
     local scales = scaleDimension:getScale(scaleButtonName)
 
     --buttonName, x, y, width, height, image, originalImage, animation, 70
-    local button = this.buttonManager:addButton(buttonName, scales.x, scales.y, scales.width, scales.height, this.buttonsQuads, this.buttonsImage)
+    local button = gameDirector:getLibrary("Button"):new("", scales.x, scales.y, scales.width, scales.height, this.buttonsQuads, this.buttonsImage)
     button.callback = callback or function(self) sceneDirector:switchScene(sceneName); sceneDirector:reset(sceneName); this.music:pause() end
     button:setScale(scales.relative.x, scales.relative.y)
     
@@ -21,13 +20,12 @@ function MainMenuScene:new()
     local this = {
         background = love.graphics.newImage("assets/textures/menu_background.png"),
         music = love.audio.newSource("assets/sounds/crazy_little_ears.mp3", "static"),
-        buttonManager = gameDirector:getLibrary("ButtonManager"):new(),
         buttonsImage = nil, buttonsQuads = nil,
         buttonNames = {}
     }
     this.music:setLooping(true)
     scaleDimension:calculeScales("menuBackground", this.background:getWidth(), this.background:getHeight(), 0, 0)
-    local spriteSheet = gameDirector:getLibrary("Pixelurite").getSpritesheet():new("buttons", "assets/gui/", nil)
+    local spriteSheet = gameDirector:getLibrary("Pixelurite").getSpritesheet():new("start_button", "assets/gui/", nil)
     local spriteQuads = spriteSheet:getQuads()
     this.buttonsQuads = {
         normal = spriteQuads["normal"],
@@ -36,11 +34,14 @@ function MainMenuScene:new()
         disabled = spriteQuads["disabled"]
     }
     this.buttonsImage = spriteSheet:getAtlas()
-
+    -- Added subscene to SceneDirector
+    sceneDirector:addSubscene("catchNoob", require "scenes.subscenes.CatchNoob":new())
     local x, y, width, height = this.buttonsQuads["normal"]:getViewport()
     local originalSize = {width = width, height = height}
-    addButton(this, 'Start Game', "inGame", {160, 60, 240, 300}, originalSize)
-    addButton(this, 'Credits', "credits", {160, 60, 240, 380}, originalSize)
+    addButton(this, 'StartGame', "inGame", {50, 50, 80, 80}, originalSize, function(self)
+        sceneDirector:switchSubscene("catchNoob"); this.music:pause()
+    end)
+    addButton(this, 'Credits', "credits", {320, 320, 420, 120}, originalSize)
 
     return setmetatable(this, MainMenuScene)
 end
@@ -49,23 +50,25 @@ function MainMenuScene:keypressed(key, scancode, isrepeat)
     if key == "escape" then
         love.event.quit()
     end
-    self.buttonManager:keypressed(key, scancode, isrepeat)
 end
 
 function MainMenuScene:keyreleased(key, scancode)
-    self.buttonManager:keyreleased(key, scancode)
 end
 
 function MainMenuScene:mousemoved(x, y, dx, dy, istouch)
-    self.buttonManager:mousemoved(x, y, dx, dy, istouch)
+    self.buttonNames['menuStartGame']:mousemoved(x, y, dx, dy, istouch)
 end
 
 function MainMenuScene:mousepressed(x, y, button)
-    self.buttonManager:mousepressed(x, y, button)
+    for _, button in pairs(self.buttonNames) do
+        button:mousepressed(x, y, button)
+    end
 end
 
 function MainMenuScene:mousereleased(x, y, button)
-    self.buttonManager:mousereleased(x, y, button)
+    for _, button in pairs(self.buttonNames) do
+        button:mousereleased(x, y, button)
+    end
 end
 
 function MainMenuScene:wheelmoved(x, y)
@@ -73,14 +76,13 @@ end
 
 function MainMenuScene:update(dt)
     self.music:play()
-    self.buttonManager:update(dt)
 end
 
 function MainMenuScene:draw()
     local width, height = love.graphics.getDimensions()
     local scales = scaleDimension:getScale("menuBackground")
     love.graphics.draw(self.background, 0, 0, 0, scales.scaleX, scales.scaleY)
-    self.buttonManager:draw()
+    self.buttonNames['menuStartGame']:draw()
 end
 
 function MainMenuScene:resize(w, h)
