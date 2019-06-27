@@ -8,8 +8,12 @@ local Player = require "models.entities.Player"
 local MoonJohn = require "libs.MoonJohn"
 local Sanghost = require "libs.Sanghost.Sanghost"
 local Pixelurite = require "libs.Pixelurite"
+local Scribe = require "libs.scribe.Scribe"
 
 --Controllers
+
+--Util
+local TextBox = require "util.TextBox"
 
 --Gui Components
 local Button = require "util.ui.Button"
@@ -27,7 +31,7 @@ function GameDirector:new()
         --Libraries
         libraries = {
             MoonJohn = MoonJohn, Sanghost = Sanghost, Pixelurite = Pixelurite,
-            Button = Button
+            Button = Button, Scribe = Scribe, TextBox = TextBox
         },
         fonts = {
             default = love.graphics.getFont(),
