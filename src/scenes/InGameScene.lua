@@ -7,12 +7,13 @@ function InGameScene:new()
         textbox = nil,
         ppaAnimation = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("ppa_animation", "assets/sprites/", true, nil, 1, 1, true),
         workstation = love.graphics.newImage("assets/textures/workstation_background.png"),
-        microphone = love.graphics.newImage("assets/sprites/microphone.png"),
+        microphone = love.graphics.newImage("assets/sprites/microphone.png"), gameScreen = love.graphics.newImage("assets/textures/monitor_game.png"),
         sound = love.audio.newSource("assets/sounds/button_pressed.mp3", "static"),
         elapsedTime = 0,
         buttons = {parentName = "inGame"}
     }, InGameScene)
     gameDirector:addButton(this, this.buttons, 'TinkerMacro', "tinkerMacro", {160, 384, 80, 170}, {width = 160, height = 384})
+    gameDirector:addButton(this, this.buttons, 'ChatGado', "chatGado", {141, 83, 465, 200}, {width = 141, height = 83})
     gameDirector:addButton(this, this.buttons, 'SingPPA', "singPPA", {100, 105, 435, 240}, {width = 100, height = 105})
     this.buttons.parentName = nil
     this.textbox = gameDirector:getLibrary("TextBox"):new(require "models.TextScript":get(), gameDirector:getLibrary("Scribe"), this)
@@ -60,6 +61,7 @@ function InGameScene:draw()
     self.ppaAnimation:draw(self.textbox and x or 180, self.textbox and y or 380, self.textbox and scale or 3, self.textbox and scale or 3)
     if self.textbox then self.textbox:draw()
     else
+        love.graphics.draw(self.gameScreen, 464, 198, r, sx, sy, ox, oy)
         love.graphics.draw(self.microphone, 435, 235, r, sx, sy, ox, oy)
     end
     for _, button in pairs(self.buttons) do
