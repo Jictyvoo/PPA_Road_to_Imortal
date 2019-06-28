@@ -1,6 +1,6 @@
 local TextBox = {}; TextBox.__index = TextBox
 
-function TextBox:new(texts, Scribe, parent)
+function TextBox:new(texts, Scribe, parent, dimensions)
     local function renderDefaultContainer( x, y, w, h )
         love.graphics.setColor( { 0.545, 0.963, 0.1, 192 } )
         love.graphics.rectangle( 'fill', x, y, w, h )
@@ -14,14 +14,14 @@ function TextBox:new(texts, Scribe, parent)
         texts = texts, index = 1, font = love.graphics.getFont(),
         scribeParameters = {
             text = texts[1],
-            x = 10,
+            x = dimensions and dimensions.x or 10,
             color = {0, 0, 0},
             bg = renderDefaultContainer
         }, parent = parent
     }, TextBox)
-    this.scribeParameters.y = (love.graphics.getHeight() - (this.font:getHeight() * 4 ) - 10) - (10 * 2)
-    this.scribeParameters.w = love.graphics.getWidth() - 10 - 10
-    this.scribeParameters.h = (this.font:getHeight() * 4) + ( 10 * 2 )
+    this.scribeParameters.y = dimensions and dimensions.y or (love.graphics.getHeight() - (this.font:getHeight() * 4 ) - 10) - (10 * 2)
+    this.scribeParameters.w = dimensions and dimensions.w or love.graphics.getWidth() - 10 - 10
+    this.scribeParameters.h = dimensions and dimensions.h or (this.font:getHeight() * 4) + ( 10 * 2 )
     this.textbox = Scribe(this.scribeParameters)
     return this
 end

@@ -120,6 +120,7 @@ function Button:draw()
                 love.graphics.draw(self.image[self.state], self.x, self.y, self.rotation, self.scaleX, self.scaleY, self.offsetX, self.offsetY)
             end
         end
+        love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
     end
 end
 

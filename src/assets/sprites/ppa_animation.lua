@@ -1,6 +1,6 @@
 return {
 	meta = {
-		image = "ppa_animation.png",
+		image = "ppa_animation_vectorized.png",
 		format = "RGBA8888",
 		size = {
 			h = 276,
