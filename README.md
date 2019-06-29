@@ -12,9 +12,8 @@ Love2d - Um Framework Lua, pode ser encontrado nesse link: https://love2d.org . 
 
 ## Metas
 
-* Fazer introdução com história
-* Fazer a fase de clicar milhares de botões e ter o botão de macro
-* Fazer a fase do homicida, começa com o áudio falando que é homicida e depois um minigame para suportar a voz do PPA
+* Fazer a fase do homicida, começa com o áudio falando que é homicida
+* Fazer uma fase siderun com o tinker
 
 ## Bibliotecas de terceiros
 
