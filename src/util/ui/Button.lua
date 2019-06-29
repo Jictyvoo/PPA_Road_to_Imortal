@@ -23,7 +23,7 @@ function Button:setCallback(callback)
 end
 
 function Button:executeCallback(...)
-    self.callback(...)
+    self.callback(self, ...)
 end
 
 function Button:disableButton()
@@ -93,7 +93,7 @@ end
 
 function Button:mousereleased(x, y, button, istouch)
     if self:isMouseOnButton(x, y) and self.pressed and self.state ~= "disabled" then
-        self.callback()
+        self.callback(self)
     end
     self.pressed = false
     self.state = self.state == "disabled" and self.state or "normal"
@@ -113,14 +113,18 @@ function Button:draw()
             if self.originalImage then
                 --love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
                 love.graphics.draw(self.originalImage, self.image[self.state], self.x, self.y, self.rotation, self.scaleX, self.scaleY, self.offsetX, self.offsetY)
-                if self.name then
-                    love.graphics.printf(self.name, self.x, self.y + (self.height / 3), 210, "center", self.rotation, 1, 1)
-                end
             else
                 love.graphics.draw(self.image[self.state], self.x, self.y, self.rotation, self.scaleX, self.scaleY, self.offsetX, self.offsetY)
             end
+            if self.name then
+                local currentFont = love.graphics.getFont()
+                local _, lines = currentFont:getWrap(self.name, self.width)
+                local fontHeight = currentFont:getHeight()
+                love.graphics.printf(self.name, self.x, self.y + self.offsetY --[[- (fontHeight / 2 * #lines)--]], self.width, "center", self.rotation, 1, 1)
+            end
         end
-        love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
+        
+        --love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
     end
 end
 

@@ -45,15 +45,15 @@ function GameDirector:getPlayer()
     return self.player
 end
 
-function GameDirector:addButton(this, buttonList, buttonName, sceneName, buttonDimensions, originalSize, callback)
+function GameDirector:addButton(this, buttonList, buttonName, showText, sceneName, buttonDimensions, originalSize, callback, disableButton)
     local scaleButtonName = buttonList.parentName .. buttonName
     scaleDimension:calculeScales(scaleButtonName, unpack(buttonDimensions))
     scaleDimension:relativeScale(scaleButtonName, originalSize)
     local scales = scaleDimension:getScale(scaleButtonName)
 
     --buttonName, x, y, width, height, image, originalImage, animation, 70
-    local button = self.libraries["Button"]:new("", scales.x, scales.y, scales.width, scales.height, this.buttonsQuads, this.buttonsImage)
-    button.callback = callback or function(self) sceneDirector:switchScene(sceneName); sceneDirector:reset(sceneName); this.music:pause() end
+    local button = self.libraries["Button"]:new(showText and buttonName or "", scales.x, scales.y, scales.width, scales.height, this.buttonsQuads, this.buttonsImage)
+    button.callback = callback or function(self) sceneDirector:switchScene(sceneName); sceneDirector:reset(sceneName); if this.music then this.music:pause() end; if disableButton then self:disableButton() end end
     button:setScale(scales.relative.x, scales.relative.y)
     
     buttonList[scaleButtonName] = button
