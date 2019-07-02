@@ -10,7 +10,7 @@ function InGameScene:new()
         microphone = love.graphics.newImage("assets/sprites/microphone.png"), gameScreen = love.graphics.newImage("assets/textures/monitor_game.png"),
         sound = love.audio.newSource("assets/sounds/button_pressed.mp3", "static"),
         elapsedTime = 0, mainMusic = love.audio.newSource("assets/sounds/ppa_road_to_imortal_theme.mp3", "static"),
-        buttons = {parentName = "inGame"}
+        buttons = {parentName = "inGame"}, textScript = require "models.TextScript":get()
     }, InGameScene)
     sceneDirector:addScene("tinkerMacro", require "scenes.minigames.TinkerMacro":new()) --[[ Added Tinker Macro Scene --]]
     gameDirector:addButton(this, this.buttons, 'TinkerMacro', false, "tinkerMacro", {160, 384, 80, 170}, {width = 160, height = 384}, nil, true)
@@ -19,8 +19,16 @@ function InGameScene:new()
     sceneDirector:addScene("singPPA", require "scenes.minigames.SingPPA":new()) --[[ Added Sing PPA Scene --]]
     gameDirector:addButton(this, this.buttons, 'SingPPA', false, "singPPA", {100, 105, 435, 240}, {width = 100, height = 105}, nil, true)
     this.buttons.parentName = nil; this.mainMusic:setLooping(true)
-    this.textbox = gameDirector:getLibrary("TextBox"):new(require "models.TextScript":get(), gameDirector:getLibrary("Scribe"), this)
     return this
+end
+
+function InGameScene:entering(sceneName)
+    print("enter", sceneName)
+    self.textbox = gameDirector:getLibrary("TextBox"):new(self.textScript[sceneName], gameDirector:getLibrary("Scribe"), self)
+end
+
+function InGameScene:goingOut(sceneName)
+    print("Out", sceneName)
 end
 
 function InGameScene:deleteTextBox()

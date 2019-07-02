@@ -31,13 +31,13 @@ function SingPPA:new()
         end
         x = 40; y = y + 140
     end
-    this:randomizeSinginPPA()
+    this:randomizeSingingPPA()
 
     this.buttons.parentName = nil
     return this
 end
 
-function SingPPA:randomizeSinginPPA()
+function SingPPA:randomizeSingingPPA()
     self.randomized = self.rng:random(28)
     for _, index in pairs(genOrderedIndex(self.buttons)) do
         if string.format('singPPASingPPA_%s', self.randomized) == index then
@@ -61,7 +61,7 @@ function SingPPA:update(dt)
     if not self.playOnce then self.earsBleeding:play(); self.playOnce = true end
     if self.musicPaused then
         self.elapsedTime = self.elapsedTime + dt
-        if self.elapsedTime >= 0.4 then self.earsBleeding:play(); self.musicPaused = false; self:randomizeSinginPPA() self.elapsedTime = 0 end
+        if self.elapsedTime >= 0.4 then self.earsBleeding:play(); self.musicPaused = false; self:randomizeSingingPPA() self.elapsedTime = 0 end
     elseif not self.earsBleeding:isPlaying() then
         sceneDirector:previousScene()
     end
