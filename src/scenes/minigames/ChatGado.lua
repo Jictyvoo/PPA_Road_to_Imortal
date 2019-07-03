@@ -4,7 +4,6 @@ ChatGado.__index = ChatGado
 
 function ChatGado:new()    
     local this = setmetatable({
-        tinkerAnimation = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("tinker_side", "assets/sprites/", true, nil, 1, 1, true),
         thisIsHowILike = love.audio.newSource("assets/sounds/assim_que_eu_gosto.mp3", "static"),
         elapsedTime = 0,
         buttons = {parentName = "inGame"}

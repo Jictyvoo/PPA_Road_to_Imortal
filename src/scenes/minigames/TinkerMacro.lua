@@ -5,14 +5,14 @@ TinkerMacro.__index = TinkerMacro
 function TinkerMacro:new()    
     local this = setmetatable({
         dotaTerrain = love.graphics.newImage("assets/textures/dota_terrain.png"),
-        tinkerAnimation = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("tinker_side", "assets/sprites/", true, nil, 1, 1, true),
+        tinkerAnimation = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("tinker_side", "assets/sprites/tinkerMacro/", true, nil, 1, 1, true),
         thisIsHowILike = love.audio.newSource("assets/sounds/assim_que_eu_gosto.mp3", "static"),
         elapsedTime = 0, visibleButtons = {}, hiddenButtons = {}, rng = love.math.newRandomGenerator(os.time()),
         buttons = {parentName = "tinkerMacro"}, macroButton = nil, waitTime = 2, totalVisible = 0, totalButtons = 0,
         buttonsClicked = 0, laserSound = love.audio.newSource("assets/sounds/tinker_laser.mp3", "static"), waitStop = 0
     }, TinkerMacro)
 
-    local spriteSheet = gameDirector:getLibrary("Pixelurite").getSpritesheet():new("macro_button", "assets/sprites/", nil)
+    local spriteSheet = gameDirector:getLibrary("Pixelurite").getSpritesheet():new("macro_button", "assets/sprites/tinkerMacro/", nil)
     local spriteQuads = spriteSheet:getQuads()
     this.buttonsQuads = {
         normal = spriteQuads["normal"],
@@ -25,7 +25,7 @@ function TinkerMacro:new()
     local originalSize = {width = width, height = height}
     gameDirector:addButton(this, this.buttons, 'Activate Macro', false, "", {160, 60, 80, 170}, originalSize, function(self) this:enableMacro() end)
 
-    local buttonImage = love.graphics.newImage("assets/sprites/button.png"); this.buttonsImage = nil
+    local buttonImage = love.graphics.newImage("assets/sprites/tinkerMacro/button.png"); this.buttonsImage = nil
     this.buttonsQuads = {normal = buttonImage, hover = buttonImage, pressed = buttonImage, disabled = buttonImage}
     originalSize = {width = buttonImage:getWidth(), height = buttonImage:getHeight()}
     x = 280; y = 140
