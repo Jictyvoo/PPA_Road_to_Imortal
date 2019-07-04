@@ -1,3 +1,7 @@
+local currentPath   = (...):gsub('%.init$', '') .. "."
+--Actors
+local Player = require(string.format("%smodels.entities.Player", currentPath))
+
 local SingPPA = {}; SingPPA.__index = SingPPA
 
 local function genOrderedIndex(tableToOrder)
@@ -34,6 +38,7 @@ local states = {
     }, {
         update = function(self, dt)
             self.singPPA:update(dt)
+            gameDirector:update(dt)
         end, draw = function(self)
             love.graphics.draw(self.background, 0, 0)
             self.singPPA:draw(40, 20, 0.5, 0.5)
@@ -52,7 +57,8 @@ function SingPPA:new()
             front = love.graphics.newImage("assets/sprites/singPPA/ppa_pipe_front.png"),
             back = love.graphics.newImage("assets/sprites/singPPA/ppa_pipe_back.png")
         }, elapsedTime = 0, playOnce = false, rng = love.math.newRandomGenerator(os.time()), randomized = 0,
-        buttons = {parentName = "singPPA"}, musicPaused = false, totalPipesClicked = 0, currentState = states[1], allStates = states
+        buttons = {parentName = "singPPA"}, musicPaused = false, totalPipesClicked = 0, currentState = states[1], allStates = states,
+        player = Player:new(gameDirector:getWorld():getWorld()),
     }, SingPPA)
     local x, y, totalCount = 40, 40, 1
     for count = 1, 4 do
@@ -73,6 +79,13 @@ end
 function SingPPA:entering(previousScene)
     if not self.playOnce then self.earsBleeding:play(); self.playOnce = true end
     self.totalPipesClicked = 0; self.currentState = self.allStates[1]
+end
+
+function SingPPA:getEntityByFixture(fixture)
+    if fixture:getUserData() == "Player" then
+        return self.characterController
+    end
+    return nil
 end
 
 function SingPPA:randomizeSingingPPA()

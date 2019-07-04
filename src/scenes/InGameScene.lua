@@ -12,11 +12,11 @@ function InGameScene:new()
         elapsedTime = 0, mainMusic = love.audio.newSource("assets/sounds/ppa_road_to_imortal_theme.mp3", "static"),
         buttons = {parentName = "inGame"}, textScript = require "models.TextScript":get()
     }, InGameScene)
-    sceneDirector:addScene("tinkerMacro", require "scenes.minigames.TinkerMacro":new()) --[[ Added Tinker Macro Scene --]]
+    sceneDirector:addScene("tinkerMacro", require "controllers.minigames.TinkerMacro":new()) --[[ Added Tinker Macro Scene --]]
     gameDirector:addButton(this, this.buttons, 'TinkerMacro', false, "tinkerMacro", {160, 384, 80, 170}, {width = 160, height = 384}, nil, true)
-    sceneDirector:addScene("chatGado", require "scenes.minigames.ChatGado":new()) --[[ Added Chat Gado Scene --]]
+    sceneDirector:addScene("chatGado", require "controllers.minigames.ChatGado":new()) --[[ Added Chat Gado Scene --]]
     --gameDirector:addButton(this, this.buttons, 'ChatGado', false, "chatGado", {141, 83, 465, 200}, {width = 141, height = 83}, nil, true)
-    sceneDirector:addScene("singPPA", require "scenes.minigames.SingPPA":new()) --[[ Added Sing PPA Scene --]]
+    sceneDirector:addScene("singPPA", require "controllers.minigames.SingPPA":new()) --[[ Added Sing PPA Scene --]]
     gameDirector:addButton(this, this.buttons, 'SingPPA', false, "singPPA", {100, 105, 435, 240}, {width = 100, height = 105}, nil, true)
     this.buttons.parentName = nil; this.mainMusic:setLooping(true)
     return this

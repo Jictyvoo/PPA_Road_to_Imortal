@@ -1,9 +1,6 @@
 --Models
 local World = require "models.business.World"
 
---Actors
-local Player = require "models.entities.Player"
-
 --Libs
 local MoonJohn = require "libs.MoonJohn"
 local Sanghost = require "libs.Sanghost.Sanghost"
@@ -26,7 +23,6 @@ function GameDirector:new()
     local world = World:new()
     local this = {
         world = world,
-        player = Player:new(world),
         gameState = Sanghost:new(),
         --Libraries
         libraries = {
@@ -39,10 +35,6 @@ function GameDirector:new()
         }
     }
     return setmetatable(this, GameDirector)
-end
-
-function GameDirector:getPlayer()
-    return self.player
 end
 
 function GameDirector:addButton(this, buttonList, buttonName, showText, sceneName, buttonDimensions, originalSize, callback, disableButton)
@@ -73,13 +65,6 @@ end
 function GameDirector:keyreleased(key, scancode)
 end
 
-function GameDirector:getEntityByFixture(fixture)
-    if fixture:getUserData() == "Player" then
-        return self.characterController
-    end
-    return nil
-end
-
 function GameDirector:getWorld()
     return self.world
 end
@@ -89,7 +74,6 @@ function GameDirector:update(dt)
 end
 
 function GameDirector:draw()
-    self.player:draw()
 end
 
 return GameDirector
