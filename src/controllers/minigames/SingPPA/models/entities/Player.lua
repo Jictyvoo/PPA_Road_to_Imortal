@@ -3,16 +3,10 @@ local Player = {}
 Player.__index = Player
 
 function Player:new(spriteAnimation, world)
-    assert(spriteAnimation, "Is needed a animation for this actor")
+    assert(spriteAnimation, "Is needed a animation for this entity")
     local this = {
-        move = false,
-        inGround = false,
         speed = 250,
-        jumpForce = -200,
-        orientation = "right",
-        animation = "idle",
-        previousAnimation = "idle",
-        looking = nil,
+        movement = {vertical = 0, horizontal = 0},
         world = world or love.physics.newWorld(0, 12),
         spriteAnimation = spriteAnimation,
         controlKeys = {
@@ -22,8 +16,8 @@ function Player:new(spriteAnimation, world)
     }
     
     --aplying physics
-    this.body = love.physics.newBody(this.world, 0, 0, "dynamic")
-    this.shape = love.physics.newCircleShape(26)
+    this.body = love.physics.newBody(this.world, 400, 500, "dynamic")
+    this.shape = love.physics.newCircleShape(64)
     this.fixture = love.physics.newFixture(this.body, this.shape, 1)
     this.body:setFixedRotation(true)
     this.fixture:setUserData("Player")
@@ -35,11 +29,23 @@ function Player:new(spriteAnimation, world)
 end
 
 function Player:keypressed(key, scancode, isrepeat)
-
+    if self.controlKeys[key] then
+        if self.controlKeys[key] == "left" then self.movement.horizontal = -1
+        elseif self.controlKeys[key] == "right" then self.movement.horizontal = 1
+        elseif self.controlKeys[key] == "up" then self.movement.vertical = -1
+        elseif self.controlKeys[key] == "down" then self.movement.vertical = 1
+        end
+    end
 end
 
 function Player:keyreleased(key, scancode)
-
+    if self.controlKeys[key] then
+        if self.controlKeys[key] == "left" then self.movement.horizontal = 0
+        elseif self.controlKeys[key] == "right" then self.movement.horizontal = 0
+        elseif self.controlKeys[key] == "up" then self.movement.vertical = 0
+        elseif self.controlKeys[key] == "down" then self.movement.vertical = 0
+        end
+    end
 end
 
 function Player:getPosition()
@@ -50,7 +56,7 @@ function Player:setPosition(x, y)
     self.body:setX(x); self.body:setY(y)
 end
 
-function Player:stopMoving()
+function Player:stopMoving() --will slide now
     local xVelocity, yVelocity = self.body:getLinearVelocity()
     self.body:setLinearVelocity(0, yVelocity)
 end
@@ -60,22 +66,9 @@ function Player:configureKeys(action, key)
 end
 
 function Player:reset()
-    self.move = false
-    self.inGround = true
-    self.looking = nil
     self.body:setLinearVelocity(0, 0)
     self.body:setX(900); self.body:setY(900)
-    self.orientation = "right"
-    self.animation = "idle"
-    self.previousAnimation = "idle"
-end
-
-function Player:touchGround(isTouching)
-
-end
-
-function Player:getOrientation()
-    return self.orientation
+    self.movement = {vertical = 0, horizontal = 0}
 end
 
 function Player:compareFixture(fixture)
@@ -83,11 +76,13 @@ function Player:compareFixture(fixture)
 end
 
 function Player:update(dt)
-
+    self.spriteAnimation:update(dt)
+    self.body:setLinearVelocity(self.speed * self.movement.horizontal, self.speed * self.movement.vertical)
 end
 
 function Player:draw()
-
+    self.spriteAnimation:draw(self.body:getX(), self.body:getY(), 0.5, 0.5)
+    --love.graphics.circle("line", self.body:getX(), self.body:getY(), 64)
 end
 
 return Player

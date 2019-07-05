@@ -21,7 +21,7 @@ function PressAnyButton:deleteTextBox()
     sceneDirector:clearStack("mainMenu")
 end
 
-function PressAnyButton:keypressed(key, scancode, isrepeat)
+function PressAnyButton:pressed()
     if not self.textbox then
         if self.elapsedTime > 1.1 then
             self.elapsedTime = 0
@@ -32,6 +32,14 @@ function PressAnyButton:keypressed(key, scancode, isrepeat)
             self.textbox = gameDirector:getLibrary("TextBox"):new({"\n\n\n\n\nOs personagens deste jogo são fictícios Todas as vozes são péssimas porque o dono das mesmas acha que falsete é o seu jeito careca de ser Esse jogo foi feito às pressas e não deve ser visto ou jogado por ninguém Corre-se risco de ter seus olhos queimados por tanta idiotice que você vai ver Fique avisado, e passe mal"}, gameDirector:getLibrary("Scribe"), self, {y = 30, h = love.graphics.getHeight() - 20})
         end
     end
+end
+
+function PressAnyButton:keypressed(key, scancode, isrepeat)
+    self:pressed()
+end
+
+function PressAnyButton:mousepressed(x, y, button)
+    self:pressed()
 end
 
 function PressAnyButton:update(dt)

@@ -34,22 +34,31 @@ local states = {
                 end
                 x = 40; y = y + 140
             end
+        end, keypressed = function(self, key, scancode, isrepeat)
+        end, keyreleased = function(self, key, scancode)
         end
     }, {
         update = function(self, dt)
-            self.singPPA:update(dt)
             gameDirector:update(dt)
+            self.singPPA:update(dt); self.player:update(dt)
         end, draw = function(self)
             love.graphics.draw(self.background, 0, 0)
-            self.singPPA:draw(40, 20, 0.5, 0.5)
+            love.graphics.draw(self.pipe.back, 400, 300, r, 2, 2, ox, oy)
+            self.singPPA:draw(480, 320, 1, 1)
+            love.graphics.draw(self.pipe.front, 400, 300, r, 2, 2, ox, oy)
+            self.player:draw()
+        end, keypressed = function(self, key, scancode, isrepeat)
+            self.player:keypressed(key, scancode, isrepeat)
+        end, keyreleased = function(self, key, scancode)
+            self.player:keyreleased(key, scancode)
         end
     }
 }
 
-function SingPPA:new()    
+function SingPPA:new()
+    local earsShip = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("ears_ship", "assets/sprites/singPPA/", true, nil, 1, 1, true)
     local this = setmetatable({
         singPPA = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("sing_ppa", "assets/sprites/singPPA/", true, nil, 1, 1, true),
-        earsShip = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("ears_ship", "assets/sprites/singPPA/", true, nil, 1, 1, true),
         background = love.graphics.newImage("assets/textures/sing_stage.png"),
         earsBleeding = love.audio.newSource("assets/sounds/ears_bleeding.mp3", "static"),
         thanksSOB = love.audio.newSource("assets/sounds/valeu_fdp.mp3", "static"),
@@ -58,7 +67,7 @@ function SingPPA:new()
             back = love.graphics.newImage("assets/sprites/singPPA/ppa_pipe_back.png")
         }, elapsedTime = 0, playOnce = false, rng = love.math.newRandomGenerator(os.time()), randomized = 0,
         buttons = {parentName = "singPPA"}, musicPaused = false, totalPipesClicked = 0, currentState = states[1], allStates = states,
-        player = Player:new(gameDirector:getWorld():getWorld()),
+        player = Player:new(earsShip, gameDirector:getWorld():getWorld()),
     }, SingPPA)
     local x, y, totalCount = 40, 40, 1
     for count = 1, 4 do
@@ -78,7 +87,7 @@ end
 
 function SingPPA:entering(previousScene)
     if not self.playOnce then self.earsBleeding:play(); self.playOnce = true end
-    self.totalPipesClicked = 0; self.currentState = self.allStates[1]
+    self.totalPipesClicked = 0; self.currentState = self.allStates[2]
 end
 
 function SingPPA:getEntityByFixture(fixture)
@@ -99,6 +108,11 @@ function SingPPA:randomizeSingingPPA()
 end
 
 function SingPPA:keypressed(key, scancode, isrepeat)
+    self.currentState.keypressed(self, key, scancode, isrepeat)
+end
+
+function SingPPA:keyreleased(key, scancode)
+    self.currentState.keyreleased(self, key, scancode)
 end
 
 function SingPPA:mousepressed(x, y, button)
