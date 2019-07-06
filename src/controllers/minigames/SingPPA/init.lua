@@ -1,6 +1,10 @@
 local currentPath   = (...):gsub('%.init$', '') .. "."
---Actors
+--Entities
+local Bullet = require(string.format("%smodels.entities.Bullet", currentPath))
 local Player = require(string.format("%smodels.entities.Player", currentPath))
+local PipePPA = require(string.format("%smodels.entities.PipePPA", currentPath))
+--Business
+local WorldFunctions = require(string.format("%smodels.business.WorldFunctions", currentPath))
 
 local SingPPA = {}; SingPPA.__index = SingPPA
 
@@ -40,13 +44,10 @@ local states = {
     }, {
         update = function(self, dt)
             gameDirector:update(dt)
-            self.singPPA:update(dt); self.player:update(dt)
+            self.pipePPA:update(dt); self.player:update(dt)
         end, draw = function(self)
             love.graphics.draw(self.background, 0, 0)
-            love.graphics.draw(self.pipe.back, 400, 300, r, 2, 2, ox, oy)
-            self.singPPA:draw(480, 320, 1, 1)
-            love.graphics.draw(self.pipe.front, 400, 300, r, 2, 2, ox, oy)
-            self.player:draw()
+            self.pipePPA:draw(); self.player:draw()
         end, keypressed = function(self, key, scancode, isrepeat)
             self.player:keypressed(key, scancode, isrepeat)
         end, keyreleased = function(self, key, scancode)
@@ -67,8 +68,11 @@ function SingPPA:new()
             back = love.graphics.newImage("assets/sprites/singPPA/ppa_pipe_back.png")
         }, elapsedTime = 0, playOnce = false, rng = love.math.newRandomGenerator(os.time()), randomized = 0,
         buttons = {parentName = "singPPA"}, musicPaused = false, totalPipesClicked = 0, currentState = states[1], allStates = states,
-        player = Player:new(earsShip, gameDirector:getWorld():getWorld()),
+        player = Player:new(earsShip, gameDirector:getWorld():getWorld(), Bullet), pipePPA = nil
     }, SingPPA)
+
+    this.pipePPA = PipePPA:new(gameDirector:getWorld():getWorld(), this.singPPA, this.pipe, Bullet)
+
     local x, y, totalCount = 40, 40, 1
     for count = 1, 4 do
         for index = 1, 7 do
@@ -80,7 +84,8 @@ function SingPPA:new()
         x = 40; y = y + 140
     end
     this:randomizeSingingPPA()
-
+    gameDirector:getWorld():addCallback("singPPA", WorldFunctions.beginContact, "beginContact")
+    gameDirector:getWorld():addCallback("singPPA", WorldFunctions.endContact, "endContact")
     this.buttons.parentName = nil
     return this
 end
@@ -88,10 +93,11 @@ end
 function SingPPA:entering(previousScene)
     if not self.playOnce then self.earsBleeding:play(); self.playOnce = true end
     self.totalPipesClicked = 0; self.currentState = self.allStates[2]
+    gameDirector:getWorld():changeCallbacks("singPPA")
 end
 
 function SingPPA:getEntityByFixture(fixture)
-    if fixture:getUserData() == "Player" then
+    if fixture:getUserData().type == "Player" then
         return self.characterController
     end
     return nil
