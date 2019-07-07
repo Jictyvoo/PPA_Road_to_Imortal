@@ -10,7 +10,7 @@ function Wall:new(world, x, y, dimensions, image, rotation)
         fixture = nil
     }
     this.body:setAngle(rotation or 0)
-    this.fixture = love.physics.newFixture(this.body, this.shape)
+    this.fixture = love.physics.newFixture(this.body, this.shape); this.fixture:setRestitution(1.1)
     this.fixture:setCategory(1); this.fixture:setUserData({object = this, type = "Wall"})
     return setmetatable(this, Wall)
 end

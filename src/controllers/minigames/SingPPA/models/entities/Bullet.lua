@@ -53,7 +53,7 @@ end
 function Bullet:draw()
     if self.image then
         love.graphics.draw(self.image, self.body:getX(), self.body:getY(), 0, 1, 1, 12.5, 32)
-        love.graphics.polygon("line", self.body:getWorldPoints(self.shape:getPoints()))
+        --love.graphics.polygon("line", self.body:getWorldPoints(self.shape:getPoints()))
     end
 end
 

@@ -2,10 +2,10 @@ local Player = {}
 
 Player.__index = Player
 
-function Player:new(spriteAnimation, world, Bullet)
+function Player:new(spriteAnimation, world, Bullet, LifeForm)
     assert(spriteAnimation, "Is needed a animation for this entity")
     local this = {
-        speed = 250, Bullet = Bullet,
+        speed = 250, Bullet = Bullet, life = LifeForm:new(5),
         movement = {vertical = 0, horizontal = 0}, clicked = {vertical = "", horizontal = ""},
         world = world or love.physics.newWorld(0, 12),
         spriteAnimation = spriteAnimation, bullets = {},
@@ -66,14 +66,17 @@ function Player:stopMoving() --will slide now
     self.body:setLinearVelocity(0, yVelocity)
 end
 
+function Player:takeDamage() self.life:takeDamage(1) end
+
+function Player:isAlive() return self.life:isAlive() end
+
 function Player:configureKeys(action, key)
     if self.controlKeys[action] then self.controlKeys[action] = key end
 end
 
 function Player:reset()
-    self.body:setLinearVelocity(0, 0)
-    self.body:setX(400); self.body:setY(500)
-    self.movement = {vertical = 0, horizontal = 0}
+    self.body:setLinearVelocity(0, 0); self.body:setX(400); self.body:setY(500)
+    self.movement = {vertical = 0, horizontal = 0}; self.life:restoreLife()
 end
 
 function Player:compareFixture(fixture)

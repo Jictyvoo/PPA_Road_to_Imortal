@@ -4,7 +4,9 @@ local Bullet = require(string.format("%smodels.entities.Bullet", currentPath))
 local Player = require(string.format("%smodels.entities.Player", currentPath))
 local PipePPA = require(string.format("%smodels.entities.PipePPA", currentPath))
 --Business
+local LifeForm = require(string.format("%smodels.business.LifeForm", currentPath))
 local WorldFunctions = require(string.format("%smodels.business.WorldFunctions", currentPath))
+local Wall = require(string.format("%smodels.Wall", currentPath))
 
 local SingPPA = {}; SingPPA.__index = SingPPA
 
@@ -43,8 +45,10 @@ local states = {
         end
     }, {
         update = function(self, dt)
-            gameDirector:update(dt)
-            self.pipePPA:update(dt); self.player:update(dt)
+            gameDirector:update(dt); self.pipePPA:update(dt); self.player:update(dt)
+            if not self.player:isAlive() then sceneDirector:switchSubscene("gameOver"); self:reset()
+            elseif self.pipePPA:isDead() then self.earsBleeding:stop(); sceneDirector:previousScene()
+            end
         end, draw = function(self)
             love.graphics.draw(self.background, 0, 0)
             self.pipePPA:draw(); self.player:draw()
@@ -68,10 +72,10 @@ function SingPPA:new()
             back = love.graphics.newImage("assets/sprites/singPPA/ppa_pipe_back.png")
         }, elapsedTime = 0, playOnce = false, rng = love.math.newRandomGenerator(os.time()), randomized = 0,
         buttons = {parentName = "singPPA"}, musicPaused = false, totalPipesClicked = 0, currentState = states[1], allStates = states,
-        player = Player:new(earsShip, gameDirector:getWorld():getWorld(), Bullet), pipePPA = nil
+        player = Player:new(earsShip, gameDirector:getWorld():getWorld(), Bullet, LifeForm), pipePPA = nil
     }, SingPPA)
-
-    this.pipePPA = PipePPA:new(gameDirector:getWorld():getWorld(), this.singPPA, this.pipe, Bullet)
+    local pipePPAnimation = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("pipe_ppa", "assets/sprites/singPPA/", true, nil, 1, 1, true)
+    this.pipePPA = PipePPA:new(gameDirector:getWorld():getWorld(), pipePPAnimation, Bullet, LifeForm)
 
     local x, y, totalCount = 40, 40, 1
     for count = 1, 4 do
@@ -83,7 +87,7 @@ function SingPPA:new()
         end
         x = 40; y = y + 140
     end
-    this:randomizeSingingPPA()
+    this:randomizeSingingPPA(); WorldFunctions.constructWall(gameDirector:getWorld():getWorld(), Wall)
     gameDirector:getWorld():addCallback("singPPA", WorldFunctions.beginContact, "beginContact")
     gameDirector:getWorld():addCallback("singPPA", WorldFunctions.endContact, "endContact")
     this.buttons.parentName = nil
@@ -92,8 +96,15 @@ end
 
 function SingPPA:entering(previousScene)
     if not self.playOnce then self.earsBleeding:play(); self.playOnce = true end
-    self.totalPipesClicked = 0; self.currentState = self.allStates[2]
+    self.totalPipesClicked = 0; self.currentState = self.allStates[1]
     gameDirector:getWorld():changeCallbacks("singPPA")
+end
+
+function SingPPA:reset()
+    self.playOnce = false; self.earsBleeding:stop(); self.earsBleeding:play()
+    self.totalPipesClicked = 0; self.currentState = self.allStates[1]
+    gameDirector:getWorld():changeCallbacks("singPPA")
+    self.player:reset(); self.pipePPA:reset()
 end
 
 function SingPPA:getEntityByFixture(fixture)
