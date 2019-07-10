@@ -5,6 +5,7 @@ local DemonWords = {}; DemonWords.__index = DemonWords
 function DemonWords:new()    
     local this = setmetatable({
         background = love.graphics.newImage("assets/textures/demonWords_background.png"),
+        distractionPPA = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("distractionPPA", "assets/sprites/demonWords/", true, nil, 1, 1, true),
         validWords = require "models.PortugueseWords", rng = love.math.newRandomGenerator(os.time()),
         elapsedTime = 0, buttons = {parentName = "demonWords"}, timesShuffled = 0,
         buttons = {parentName = "demonWords"}, currentWord = "", wordsFinded = {},
@@ -19,12 +20,11 @@ function DemonWords:new()
     }
     local x, y, width, height = this.buttonsQuads["normal"]:getViewport()
     local originalSize = {width = width, height = height}
-    local x = 90; local y = 200
+    local x = 100; local y = 200
     for letter in string.gmatch("123456789", ".") do
         gameDirector:addButton(this, this.buttons, letter, true, "", {40, 40, x, y}, originalSize, 
         function(self) self:disableButton(); this:appendLetter(self:getName()) end, true)
-        x = x + 50
-        if x >= 700 then x = 280; y = y + 50 end
+        x = x + 60; if x >= 460 then x = 190; y = y - 60 end
     end
 
     gameDirector:addButton(this, this.buttons, "Verificar", true, "", {241, 62, 546, 522}, originalSize, function(self) this:verifyWord() end, true)
@@ -80,10 +80,12 @@ function DemonWords:update(dt)
     if self.timeRemainning:getValue() <= 0 and not self.thread:isRunning() then
         self:shuffleNewLetters()
     end
+    self.distractionPPA:update(dt)
 end
 
 function DemonWords:draw()
     love.graphics.draw(self.background, 0, 0, r, sx, sy, ox, oy)
+    self.distractionPPA:draw(670, 220, 0.7, 0.7)
     self.timeRemainning:draw()
     for _, button in pairs(self.buttons) do
         button:draw()
