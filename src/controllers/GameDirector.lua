@@ -14,6 +14,7 @@ local TextBox = require "util.TextBox"
 
 --Gui Components
 local Button = require "util.ui.Button"
+local ProgressBar = require "util.ui.ProgressBar"
 
 local GameDirector = {}
 
@@ -27,7 +28,7 @@ function GameDirector:new()
         --Libraries
         libraries = {
             MoonJohn = MoonJohn, Sanghost = Sanghost, Pixelurite = Pixelurite,
-            Button = Button, Scribe = Scribe, TextBox = TextBox
+            ProgressBar = ProgressBar, Button = Button, Scribe = Scribe, TextBox = TextBox
         },
         fonts = {
             default = love.graphics.getFont(),
@@ -55,9 +56,7 @@ function GameDirector:getLibrary(library)
     return self.libraries[library]
 end
 
-function GameDirector:getFonts()
-    return self.fonts
-end
+function GameDirector:getFonts() return self.fonts end
 
 function GameDirector:keypressed(key, scancode, isrepeat)
 end
@@ -65,13 +64,9 @@ end
 function GameDirector:keyreleased(key, scancode)
 end
 
-function GameDirector:getWorld()
-    return self.world
-end
+function GameDirector:getWorld() return self.world end
 
-function GameDirector:update(dt)
-    self.world:update(dt)
-end
+function GameDirector:update(dt) self.world:update(dt) end
 
 function GameDirector:draw()
 end

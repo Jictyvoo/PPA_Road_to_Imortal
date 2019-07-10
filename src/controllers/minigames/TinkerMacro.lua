@@ -35,7 +35,7 @@ function TinkerMacro:new()
         if x >= 700 then x = 280; y = y + 50 end
     end
     this.macroButton = this.buttons["tinkerMacroActivate Macro"]; this.buttons["tinkerMacroActivate Macro"] = nil
-    this.buttons.parentName = nil;
+    this.buttons.parentName = nil
     return this
 end
 

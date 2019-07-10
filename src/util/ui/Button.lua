@@ -18,59 +18,41 @@ function Button:isMouseOnButton(x, y)
     return (x >= self.x - self.offsetX and x <= self.x + self.width - self.offsetX) and (y >= self.y - self.offsetY and y <= self.y + self.height - self.offsetY)
 end
 
-function Button:setCallback(callback)
-    self.callback = callback
+function Button:setCallback(callback) self.callback = callback end
+
+function Button:executeCallback(...) self.callback(self, ...) end
+
+function Button:disableButton() self.state = "disabled" end
+
+function Button:enableButton() self.state = "normal" end
+
+function Button:setVisible(isVisible) self.visible = isVisible end
+
+function Button:getName() return self.name end
+
+function Button:setName(name) self.name = name or self.name end
+
+function Button:setXY(x, y) self.x, self.y = x, y end
+
+function Button:setScale(scaleX, scaleY) self.scaleX, self.scaleY = scaleX, scaleY end
+
+function Button:setDimensions(width, height) self.width, self.height = width, height end
+
+function Button:setRotation(rotation) self.rotation = rotation end
+
+function Button:setOffset(offsetX, offsetY)
+    self.offsetX, self.offsetY = offsetX, offsetY
 end
 
-function Button:executeCallback(...)
-    self.callback(self, ...)
-end
+function Button:getState() return self.state end
 
-function Button:disableButton()
-    self.state = "disabled"
-end
-
-function Button:setVisible(isVisible)
-    self.visible = isVisible
-end
-
-function Button:enableButton()
-    self.state = "normal"
-end
+function Button:setState(newState) self.state = newState end
 
 function Button:setButtonImage(image, type)
     if not self.image then
         self.image = {normal = image, pressed = image, hover = image, disabled = image}
     end
     self.image[type or "normal"] = image
-end
-
-function Button:setXY(x, y)
-    self.x, self.y = x, y
-end
-
-function Button:setScale(scaleX, scaleY)
-    self.scaleX, self.scaleY = scaleX, scaleY
-end
-
-function Button:setDimensions(width, height)
-    self.width, self.height = width, height
-end
-
-function Button:setRotation(rotation)
-    self.rotation = rotation
-end
-
-function Button:setOffset(offsetX, offsetY)
-    self.offsetX, self.offsetY = offsetX, offsetY
-end
-
-function Button:getState()
-    return self.state
-end
-
-function Button:setState(newState)
-    self.state = newState
 end
 
 function Button:mousemoved(x, y, dx, dy, istouch)
@@ -124,7 +106,7 @@ function Button:draw()
             end
         end
         
-        --love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
+        love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
     end
 end
 

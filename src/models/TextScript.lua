@@ -29,6 +29,12 @@ local texts = {
             "Enfim, voltando à nossa história, o grande gado PPA, sem motivo algum aparente para estourar os tímpanos dos seus viewers decidiu seguir a jornada do falsete, quer dizer gado",
             "\"Eu canto muito bem, o novo Freddie Mercury da minha geração. Com certeza essa minha perfomance vai levar ao Emmy!!\"",
             "Mal sabia nosso gado careca, que se continuasse cantando, seu destino seria o manicômio, pois nenhuma pessoa normal seria capaz de cantar dessa forma e continuar são..."
+        },
+        demonWords = {
+            ""
+        },
+        chatGado = {
+            ""
         }
     }
 }

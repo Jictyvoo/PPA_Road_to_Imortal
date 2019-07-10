@@ -1,28 +1,24 @@
-local receivedLetters = ...
-print(receivedLetters)
+local receivedLetters, currentPath = ...
+local fourLettersCombinations = require(string.format("%sFourLettersCombinations", currentPath))
+local fiveLettersCombinations = require(string.format("%sFiveLettersCombinations", currentPath))
+local sixLettersCombinations = require(string.format("%sSixLettersCombinations", currentPath))
 local allWords = require "models.PortugueseWords"
 
 local function testWord(word)
-    if allWords[word] then love.thread.getChannel('findWords'):push(word); print(word) end
+    if allWords[word] then love.thread.getChannel('findWords'):push(word) end
 end
 
 --[[ Here will find words --]]
 local letters = {}
 for letter in receivedLetters:gmatch(".") do table.insert(letters, letter) end
-for firstCount = 1, #letters do
-    for secondCount = 1, #letters do
-        for thirdCount = 1, #letters do
-            for fourthCount = 1, #letters do
-                testWord(string.format("%s%s%s%s", letters[firstCount], letters[secondCount], letters[thirdCount], letters[fourthCount]))
-                for fifthCount = 1, #letters do
-                    testWord(string.format("%s%s%s%s%s", letters[firstCount], letters[secondCount], letters[thirdCount], letters[fourthCount], letters[fifthCount]))
-                    for sixCount = 1, #letters do
-                        testWord(string.format("%s%s%s%s%s%s", letters[firstCount], letters[secondCount], letters[thirdCount], letters[fourthCount], letters[fifthCount], letters[sixCount]))                        
-                    end
-                end
-            end
-        end
-    end
+for _, combination in pairs(fourLettersCombinations) do
+    testWord(string.format("%s%s%s%s", letters[combination[1]], letters[combination[2]], letters[combination[3]], letters[combination[4]]))
 end
-print("FINISHED")
+for _, combination in pairs(fiveLettersCombinations) do
+    testWord(string.format("%s%s%s%s%s", letters[combination[1]], letters[combination[2]], letters[combination[3]], letters[combination[4]], letters[combination[5]]))
+end
+for _, combination in pairs(sixLettersCombinations) do
+    testWord(string.format("%s%s%s%s%s%s", letters[combination[1]], letters[combination[2]], letters[combination[3]], letters[combination[4]], letters[combination[5]], letters[combination[6]]))                        
+end
+
 love.thread.getChannel('findWords'):push(true)
