@@ -12,9 +12,13 @@ function DemonWords:new()
         thread = love.thread.newThread(string.format("%sFindWordsThread", currentPath):gsub("%.", "/") .. ".lua")
     }, DemonWords)
 
-    local buttonImage = love.graphics.newImage("assets/sprites/tinkerMacro/button.png")
-    this.buttonsQuads = {normal = buttonImage, hover = buttonImage, pressed = buttonImage, disabled = buttonImage}
-    local originalSize = {width = buttonImage:getWidth(), height = buttonImage:getHeight()}
+    local spriteSheet = gameDirector:getLibrary("Pixelurite").getSpritesheet():new("letterButton", "assets/sprites/demonWords/", nil)
+    local spriteQuads = spriteSheet:getQuads(); this.buttonsImage = spriteSheet:getAtlas()
+    this.buttonsQuads = {
+        normal = spriteQuads["normal"], hover = spriteQuads["hover"], pressed = spriteQuads["pressed"], disabled = spriteQuads["disabled"]
+    }
+    local x, y, width, height = this.buttonsQuads["normal"]:getViewport()
+    local originalSize = {width = width, height = height}
     local x = 90; local y = 200
     for letter in string.gmatch("123456789", ".") do
         gameDirector:addButton(this, this.buttons, letter, true, "", {40, 40, x, y}, originalSize, 
@@ -38,7 +42,7 @@ function DemonWords:shuffleNewLetters()
     }
     self.thread:start(string.format("%s%s%s%s%s%s%s%s%s", unpack(self.letters)):lower(), currentPath); local count = 1
     for _, button in pairs(self.buttons) do
-        button:setName(self.letters[count]); count = count + 1
+        button:setName(self.letters[count]); button:enableButton(); count = count + 1
     end
     self.timesShuffled = self.timesShuffled + 1; self.timeRemainning:fill()
     if self.timesShuffled > 3 then sceneDirector:previousScene() end
@@ -56,6 +60,10 @@ function DemonWords:verifyWord()
 end
 
 function DemonWords:keypressed(key, scancode, isrepeat)
+end
+
+function DemonWords:mousemoved(x, y, dx, dy, istouch)
+    for _, button in pairs(self.buttons) do button:mousemoved(x, y, dx, dy, istouch) end
 end
 
 function DemonWords:mousepressed(x, y, button)
