@@ -46,6 +46,8 @@ end
 
 function Button:getState() return self.state end
 
+function Button:isEnabled() return self.state ~= "disabled" end
+
 function Button:setState(newState) self.state = newState end
 
 function Button:setButtonImage(image, type)

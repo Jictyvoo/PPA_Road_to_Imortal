@@ -1,4 +1,5 @@
 local currentPath   = (...):gsub('%.init$', '') .. "."
+local Label = require(string.format("%smodels.Label", currentPath))
 
 local DemonWords = {}; DemonWords.__index = DemonWords
 
@@ -8,7 +9,8 @@ function DemonWords:new()
         distractionPPA = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("distractionPPA", "assets/sprites/demonWords/", true, nil, 1, 1, true),
         validWords = require "models.PortugueseWords", rng = love.math.newRandomGenerator(os.time()),
         elapsedTime = 0, buttons = {parentName = "demonWords"}, timesShuffled = 0,
-        buttons = {parentName = "demonWords"}, currentWord = "", wordsFinded = {},
+        buttons = {parentName = "demonWords"}, currentWord = "", wordsFinded = {}, allWords = Label:new(25, 410, 490, 160, "", nil, nil),
+        currentWordLabel = Label:new(574, 430, 180, 90, "", nil, nil),
         timeRemainning = gameDirector:getLibrary("ProgressBar"):new(50, 300, 400, 20, {0.58, 0.75, 0.98}, 16, 16),
         thread = love.thread.newThread(string.format("%sFindWordsThread", currentPath):gsub("%.", "/") .. ".lua")
     }, DemonWords)
@@ -33,6 +35,14 @@ function DemonWords:new()
     return this
 end
 
+function DemonWords:isLost()
+    local computer, player = 0, 0
+    for _, value in pairs(self.wordsFinded) do
+        if value == "player" then player = player + 1 else computer = computer + 1 end
+    end
+    return computer > player + 12
+end
+
 function DemonWords:shuffleNewLetters()
     local vowels = {"a", "e", "i", "o", "u"}
     self.letters = {
@@ -40,26 +50,42 @@ function DemonWords:shuffleNewLetters()
         string.char(self.rng:random(97, 122)), string.char(self.rng:random(97, 122)), string.char(self.rng:random(97, 122)),
         vowels[self.rng:random(#vowels)], string.char(self.rng:random(97, 122)), vowels[self.rng:random(#vowels)]
     }
+    --[[ Removing all founded words from channel --]]
+    while love.thread.getChannel('findWords'):pop() do end
     self.thread:start(string.format("%s%s%s%s%s%s%s%s%s", unpack(self.letters)):lower(), currentPath); local count = 1
     for _, button in pairs(self.buttons) do
         button:setName(self.letters[count]); button:enableButton(); count = count + 1
     end
+    self.currentWord = ""; self.currentWordLabel:setText(self.currentWord)
     self.timesShuffled = self.timesShuffled + 1; self.timeRemainning:fill()
-    if self.timesShuffled > 3 then sceneDirector:previousScene() end
+    if self.timesShuffled > 5 then
+        if self:isLost() then sceneDirector:switchSubscene("gameOver"); self:reset()
+        else sceneDirector:previousScene()
+        end
+    end
+end
+
+function DemonWords:reset()
+    self.timesShuffled =  0; self.elapsedTime = 0; self.wordsFinded = {}
+    self.currentWord = ""; self.currentWordLabel:setText(""); self.allWords:setText("")
 end
 
 function DemonWords:appendLetter(letter)
     if #self.currentWord < 6 then
         self.currentWord = self.currentWord .. letter
+        self.currentWordLabel:setText(self.currentWord)
     end
 end
 
 function DemonWords:verifyWord()
-    if self.validWords[self.currentWord] then table.insert(self.wordsFinded, self.currentWord) end
+    if self.validWords[self.currentWord] then self.wordsFinded[self.currentWord] = "player"; self.allWords:addText(self.currentWord .. "     ") end
+    self.currentWord = ""; self.currentWordLabel:setText(self.currentWord)
     for _, button in pairs(self.buttons) do button:enableButton() end
 end
 
 function DemonWords:keypressed(key, scancode, isrepeat)
+    for _, button in pairs(self.buttons) do if button:getName() == key and button:isEnabled() then button:executeCallback(); break end end
+    if key == "return" then self:verifyWord() end
 end
 
 function DemonWords:mousemoved(x, y, dx, dy, istouch)
@@ -76,7 +102,18 @@ end
 
 function DemonWords:update(dt)
     self.elapsedTime = self.elapsedTime + dt; self.timeRemainning:decrement(dt)
-    local computerWord = love.thread.getChannel('findWords'):pop()
+    if self.elapsedTime >= 5 then
+        local computerFind = nil; self.elapsedTime = 0
+        repeat
+            local computerFind = love.thread.getChannel('findWords'):pop()
+            if computerFind then
+                if not self.wordsFinded[computerFind] then
+                    self.wordsFinded[computerFind] = "computer"; self.allWords:addText(computerFind .. "     ")
+                    computerFind = nil
+                end
+            end
+        until not computerFind
+    end
     if self.timeRemainning:getValue() <= 0 and not self.thread:isRunning() then
         self:shuffleNewLetters()
     end
@@ -90,6 +127,9 @@ function DemonWords:draw()
     for _, button in pairs(self.buttons) do
         button:draw()
     end
+
+    --Drawning current word
+    self.currentWordLabel:draw(); self.allWords:draw()
 end
 
 return DemonWords

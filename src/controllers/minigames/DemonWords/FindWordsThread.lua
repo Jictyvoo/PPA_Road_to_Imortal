@@ -1,7 +1,7 @@
 local receivedLetters, currentPath = ...
-local fourLettersCombinations = require(string.format("%sFourLettersCombinations", currentPath))
-local fiveLettersCombinations = require(string.format("%sFiveLettersCombinations", currentPath))
-local sixLettersCombinations = require(string.format("%sSixLettersCombinations", currentPath))
+local fourLettersCombinations = require(string.format("%smodels.value.FourLettersCombinations", currentPath))
+local fiveLettersCombinations = require(string.format("%smodels.value.FiveLettersCombinations", currentPath))
+local sixLettersCombinations = require(string.format("%smodels.value.SixLettersCombinations", currentPath))
 local allWords = require "models.PortugueseWords"
 
 local function testWord(word)
@@ -21,4 +21,4 @@ for _, combination in pairs(sixLettersCombinations) do
     testWord(string.format("%s%s%s%s%s%s", letters[combination[1]], letters[combination[2]], letters[combination[3]], letters[combination[4]], letters[combination[5]], letters[combination[6]]))                        
 end
 
-love.thread.getChannel('findWords'):push(true)
+--love.thread.getChannel('findWords'):push(true)

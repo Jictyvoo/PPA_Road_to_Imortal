@@ -31,10 +31,19 @@ local texts = {
             "Mal sabia nosso gado careca, que se continuasse cantando, seu destino seria o manicômio, pois nenhuma pessoa normal seria capaz de cantar dessa forma e continuar são..."
         },
         demonWords = {
-            ""
+            "FINALMENTE PASSEI DESSE JOGO DO DEMONIO, MEU DEUS!!!!!!!!!!!!!",
+            "Não entendo como esse careca do PPA aguenta jogar um jogo desses velho, namoral...",
+            "Mas enfim, vamos voltar à nossa história do grande gado PPA, e seus devaneios de careca barbudo",
+            "\"Eu me viciei muito nesse jogo, é tão viciante quanto Dota, porque estressa muito e deixa todos que jogam tiltados! Ah que delicia, essa sensação masoquista em mim é ótima!\"",
+            "\"Quer dizer... Sofrer um pouco com jogo é bom né... Só não posso me acostumar muito para o meu cabelo não começar a crescer! Quanto mais tiltado eu estiver, melhor será\"",
+            "E assim nosso mestre dos gados segue com seus planos para conquistar todas as mulh... Quer dizer, tentar ser mais gado possível, porque temos de ser realistas não é mesmo?"
         },
         chatGado = {
-            ""
+            "..........................",
+            ".............................................................................................................................................................................",
+            "Então...", "Acho que não tenho o que comentar sobre isso não é mesmo?", "Um conselho meu para vocês que estão vendo essa história: Apenas ignorem essa parte e sigam em frente",
+            "Espero nem lembrar do que eu vi aqui, é muita informação e gadisse para eu lembrar...",
+            "ALGUÉM LIMPA MEU CÉREBRO QUE EU NÃO AGUENTO O QUE ACABEI DE VER!!!!!!!!!!!!! SCORROOOOOOOOOO!"
         }
     }
 }
