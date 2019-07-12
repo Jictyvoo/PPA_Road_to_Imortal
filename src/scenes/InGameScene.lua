@@ -26,12 +26,12 @@ function InGameScene:new()
 end
 
 function InGameScene:entering(sceneName)
-    print("enter", sceneName)
+    --print("enter", sceneName)
     self.textbox = gameDirector:getLibrary("TextBox"):new(self.textScript[sceneName], gameDirector:getLibrary("Scribe"), self)
 end
 
 function InGameScene:goingOut(sceneName)
-    print("Out", sceneName)
+    --print("Out", sceneName)
 end
 
 function InGameScene:deleteTextBox()
