@@ -13,13 +13,15 @@ function InGameScene:new()
         buttons = {parentName = "inGame"}, textScript = require "models.TextScript":get()
     }, InGameScene)
     sceneDirector:addSubscene("gameOver", require "scenes.subscenes.GameOver":new(), true)
-    sceneDirector:addScene("tinkerMacro", require "controllers.minigames.TinkerMacro":new()) --[[ Added Tinker Macro Scene --]]
+
+    gameDirector:loadScene("tinkerMacro", "controllers.minigames.TinkerMacro")
+    gameDirector:loadScene("chatGado", "controllers.minigames.ChatGado")
+    gameDirector:loadScene("demonWords", "controllers.minigames.DemonWords")
+    gameDirector:loadScene("singPPA", "controllers.minigames.SingPPA")
+
     gameDirector:addButton(this, this.buttons, 'TinkerMacro', false, "tinkerMacro", {160, 384, 80, 170}, {width = 160, height = 384}, nil, true)
-    sceneDirector:addScene("chatGado", require "controllers.minigames.ChatGado":new()) --[[ Added Chat Gado Scene --]]
     gameDirector:addButton(this, this.buttons, 'ChatGado', false, "chatGado", {141, 83, 465, 200}, {width = 141, height = 83}, nil, true)
-    sceneDirector:addScene("demonWords", require "controllers.minigames.DemonWords":new()) --[[ Added Demon Words Scene --]]
     gameDirector:addButton(this, this.buttons, 'DemonWords', false, "demonWords", {78, 117, 723, 46}, {width = 78, height = 117}, nil, true)
-    sceneDirector:addScene("singPPA", require "controllers.minigames.SingPPA":new()) --[[ Added Sing PPA Scene --]]
     gameDirector:addButton(this, this.buttons, 'SingPPA', false, "singPPA", {100, 105, 435, 240}, {width = 100, height = 105}, nil, true)
     this.buttons.parentName = nil; this.mainMusic:setLooping(true)
     return this
@@ -68,7 +70,11 @@ function InGameScene:update(dt)
     self.elapsedTime = self.elapsedTime + dt
     self.ppaAnimation:update(dt)
     if self.textbox then self.textbox:update(dt) end
-    if self.buttons["inGameTinkerMacro"].state == "disabled" and self.buttons["inGameSingPPA"].state == "disabled" then
+    local hasOneEnabled = false
+    for _, button in pairs(self.buttons) do
+        if button:isEnabled() then hasOneEnabled = true end
+    end
+    if not hasOneEnabled then
         sceneDirector:clearStack("pressAny"); sceneDirector:switchScene("credits")
     end
 end

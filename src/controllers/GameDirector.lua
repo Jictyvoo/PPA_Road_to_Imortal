@@ -52,6 +52,10 @@ function GameDirector:addButton(this, buttonList, buttonName, showText, sceneNam
     buttonList[scaleButtonName] = button
 end
 
+function GameDirector:loadScene(sceneName, requiredFile)
+    sceneDirector:addScene(sceneName, require (requiredFile):new()) --[[ Added sceneName Scene --]]
+end
+
 function GameDirector:getLibrary(library)
     return self.libraries[library]
 end

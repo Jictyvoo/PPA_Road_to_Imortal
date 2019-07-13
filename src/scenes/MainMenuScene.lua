@@ -46,6 +46,15 @@ function MainMenuScene:new()
     return setmetatable(this, MainMenuScene)
 end
 
+function MainMenuScene:entering(fromScene)
+    if fromScene == "pressAny" then
+        gameDirector:loadScene("tinkerMacro", "controllers.minigames.TinkerMacro")
+        gameDirector:loadScene("chatGado", "controllers.minigames.ChatGado")
+        gameDirector:loadScene("demonWords", "controllers.minigames.DemonWords")
+        gameDirector:loadScene("singPPA", "controllers.minigames.SingPPA")
+    end
+end
+
 function MainMenuScene:keypressed(key, scancode, isrepeat)
     if key == "escape" then
         love.event.quit()

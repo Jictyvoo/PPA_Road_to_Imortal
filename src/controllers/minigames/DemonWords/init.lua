@@ -9,6 +9,7 @@ function DemonWords:new()
         distractionPPA = gameDirector:getLibrary("Pixelurite").configureSpriteSheet("distractionPPA", "assets/sprites/demonWords/", true, nil, 1, 1, true),
         validWords = require "models.PortugueseWords", rng = love.math.newRandomGenerator(os.time()),
         elapsedTime = 0, buttons = {parentName = "demonWords"}, timesShuffled = 0,
+        computerSound = love.audio.newSource("assets/sounds/tictacpc.mp3", "static"),
         buttons = {parentName = "demonWords"}, currentWord = "", wordsFinded = {}, allWords = Label:new(25, 410, 490, 160, "", nil, nil),
         currentWordLabel = Label:new(574, 430, 180, 90, "", nil, nil),
         timeRemainning = gameDirector:getLibrary("ProgressBar"):new(50, 300, 400, 20, {0.58, 0.75, 0.98}, 16, 16),
@@ -109,7 +110,7 @@ function DemonWords:update(dt)
             if computerFind then
                 if not self.wordsFinded[computerFind] then
                     self.wordsFinded[computerFind] = "computer"; self.allWords:addText(computerFind .. "     ")
-                    computerFind = nil
+                    computerFind = nil; self.computerSound:play()
                 end
             end
         until not computerFind

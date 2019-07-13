@@ -8,11 +8,15 @@ function GameOver:new()
 end
 
 function GameOver:keypressed(key, scancode, isrepeat)
-    sceneDirector:exitSubscene()
+    if self.elapsedTime >= 2.4 then sceneDirector:exitSubscene() end
 end
 
 function GameOver:mousepressed(x, y, button)
-    sceneDirector:exitSubscene()
+    if self.elapsedTime >= 2.4 then sceneDirector:exitSubscene() end
+end
+
+function GameOver:update(dt)
+    self.elapsedTime = self.elapsedTime + dt
 end
 
 function GameOver:draw()
