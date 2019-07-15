@@ -8,6 +8,7 @@ function ChatGado:new()
         elapsedTime = 0, background = love.graphics.newImage("assets/textures/chat_gado.png"),
         buttons = {parentName = "inGame"}
     }, ChatGado)
+    
     this.buttons.parentName = nil
     return this
 end
