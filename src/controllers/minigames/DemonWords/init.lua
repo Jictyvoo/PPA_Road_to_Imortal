@@ -79,7 +79,7 @@ function DemonWords:appendLetter(letter)
 end
 
 function DemonWords:verifyWord()
-    if self.validWords[self.currentWord] then self.wordsFinded[self.currentWord] = "player"; self.allWords:addText(self.currentWord .. "     ") end
+    if self.validWords[self.currentWord] and not self.wordsFinded[self.currentWord] then self.wordsFinded[self.currentWord] = "player"; self.allWords:addText(self.currentWord .. "     ") end
     self.currentWord = ""; self.currentWordLabel:setText(self.currentWord)
     for _, button in pairs(self.buttons) do button:enableButton() end
 end
