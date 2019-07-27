@@ -9,16 +9,14 @@ function TinkerMacro:new()
         thisIsHowILike = love.audio.newSource("assets/sounds/assim_que_eu_gosto.mp3", "static"),
         elapsedTime = 0, visibleButtons = {}, hiddenButtons = {}, rng = love.math.newRandomGenerator(os.time()),
         buttons = {parentName = "tinkerMacro"}, macroButton = nil, waitTime = 2, totalVisible = 0, totalButtons = 0,
-        buttonsClicked = 0, laserSound = love.audio.newSource("assets/sounds/tinker_laser.mp3", "static"), waitStop = 0
+        buttonsClicked = 0, laserSound = love.audio.newSource("assets/sounds/tinker_laser.mp3", "static"), waitStop = 0, waitMacro = 6
     }, TinkerMacro)
 
     local spriteSheet = gameDirector:getLibrary("Pixelurite").getSpritesheet():new("macro_button", "assets/sprites/tinkerMacro/", nil)
     local spriteQuads = spriteSheet:getQuads()
     this.buttonsQuads = {
-        normal = spriteQuads["normal"],
-        hover = spriteQuads["hover"],
-        pressed = spriteQuads["pressed"],
-        disabled = spriteQuads["disabled"]
+        normal = spriteQuads["normal"], hover = spriteQuads["hover"],
+        pressed = spriteQuads["pressed"], disabled = spriteQuads["disabled"]
     }
     this.buttonsImage = spriteSheet:getAtlas()
     local x, y, width, height = this.buttonsQuads["normal"]:getViewport()
@@ -54,14 +52,14 @@ function TinkerMacro:keypressed(key, scancode, isrepeat)
 end
 
 function TinkerMacro:mousepressed(x, y, button)
-    if self.totalVisible >= 15 then self.macroButton:mousepressed(x, y, button) end
+    if self.waitMacro <= 0 then self.macroButton:mousepressed(x, y, button) end
     for _, button in pairs(self.buttons) do
         button:mousepressed(x, y, button)
     end
 end
 
 function TinkerMacro:mousereleased(x, y, button)
-    if self.totalVisible >= 15 then self.macroButton:mousereleased(x, y, button) end
+    if self.waitMacro <= 0 then self.macroButton:mousereleased(x, y, button) end
     for _, button in pairs(self.buttons) do
         button:mousereleased(x, y, button)
     end
@@ -69,6 +67,7 @@ end
 
 function TinkerMacro:update(dt)
     self.elapsedTime = self.elapsedTime + dt
+    if self.totalVisible >= 15 then self.waitMacro = self.waitMacro - dt end
     if self.waitStop > 0 then
         if self.elapsedTime >= self.waitStop then
             self.thisIsHowILike:play(); sceneDirector:previousScene()
@@ -110,9 +109,7 @@ function TinkerMacro:draw()
     love.graphics.draw(self.dotaTerrain, 0, 0, r, sx, sy, ox, oy)
     love.graphics.printf("Solte o Laser do Tinker", 0, 40, love.graphics.getWidth(), "center")
     self.tinkerAnimation:draw(160, 400, 2.5, 2.5)
-    if self.totalVisible >= 15 then
-        self.macroButton:draw()
-    end
+    if self.waitMacro <= 0 then self.macroButton:draw() end
     for _, button in pairs(self.buttons) do
         if self.visibleButtons[_:sub(-1)] then button:draw() end
     end

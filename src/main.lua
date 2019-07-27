@@ -14,7 +14,7 @@ function love.load()
     sceneDirector:addScene("credits", require "scenes.CreditsScene":new())
     --[[sceneDirector:addScene("configurations", require "scenes.ConfigurationScene":new())--]]
     sceneDirector:addScene("inGame", inGame)
-    sceneDirector:clearStack("inGame")
+    --sceneDirector:clearStack("inGame")
 
     local events = {"keypressed", "keyreleased", "mousemoved", "mousepressed", "mousereleased", "wheelmoved", "update", "draw"}
     for _, event in pairs(events) do

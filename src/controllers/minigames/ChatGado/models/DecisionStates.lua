@@ -8,10 +8,9 @@ local states = {
         }
     },
     hereTinker = {
-        text = "Talvez o único Tinker careca existente né? LUL"
+        text = "Talvez o único Tinker careca existente né? LUL",
         options = {
             ohYes = "EXATAMENTE! Kappa, é isso que eu sou, o meu jeito careca de ser",
-
         }
     },
     giveVIP = {
@@ -51,7 +50,7 @@ local states = {
             staySilence = "É... Hora de jogar um Dota!",
             youAreWelcome = "Obrigado, e muito bem-vinda!"
         }
-    }
+    },
     getTogether = {
         text = "Nossa, muito obrigada... Você é realmente atensioso",
         options = {
@@ -71,7 +70,7 @@ local states = {
     makeMeSad = {
         text = "<3 Por isso estamos aqui",
         finished = true
-    }
+    },
     myReason = {
         text = "KappaPride",
         finished = true
@@ -85,11 +84,11 @@ local states = {
         finished = true
     },
     cattleDuty = {
-        text = "Quê!? Seu mentiroso enganador! Você não me merece!"
+        text = "Quê!? Seu mentiroso enganador! Você não me merece!",
         options = {
             start = "ME FUDI!"
         }
-    }
+    },
     markWoman = {
         text = "Que ser nojento! Nem acredito que cheguei a achar que você poderia ser legal, juro que você está acabado!",
         options = {
@@ -103,8 +102,9 @@ return {
     chooseState = function(self, newState)
         if states[newState] then self.currentState = states[newState] end
     end,
-    isFinished = function(self) return self.currentState.finished or false end
+    isFinished = function(self) return self.currentState.finished or false end,
     getOptions = function(self) return self.currentState.options end,
+    getOptionText = function(self, option) return self.currentState.options[option] end,
     getText = function(self) return self.currentState.text end,
     restart = function(self) self.currentState = states.start end
 }

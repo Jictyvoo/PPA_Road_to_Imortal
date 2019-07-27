@@ -1,5 +1,5 @@
 local currentPath   = (...):gsub('%.init$', '') .. "."
-local Label = require(string.format("%smodels.Label", currentPath))
+local Label = require "util.Label"
 
 local DemonWords = {}; DemonWords.__index = DemonWords
 
@@ -23,7 +23,7 @@ function DemonWords:new()
     }
     local x, y, width, height = this.buttonsQuads["normal"]:getViewport()
     local originalSize = {width = width, height = height}
-    local x = 100; local y = 200
+    x = 100; y = 200
     for letter in string.gmatch("123456789", ".") do
         gameDirector:addButton(this, this.buttons, letter, true, "", {40, 40, x, y}, originalSize, 
         function(self) self:disableButton(); this:appendLetter(self:getName()) end, true)
@@ -125,9 +125,7 @@ function DemonWords:draw()
     love.graphics.draw(self.background, 0, 0, r, sx, sy, ox, oy)
     self.distractionPPA:draw(670, 220, 0.7, 0.7)
     self.timeRemainning:draw()
-    for _, button in pairs(self.buttons) do
-        button:draw()
-    end
+    for _, button in pairs(self.buttons) do button:draw() end
 
     --Drawning current word
     self.currentWordLabel:draw(); self.allWords:draw()

@@ -32,7 +32,8 @@ function GameDirector:new()
         },
         fonts = {
             default = love.graphics.getFont(),
-            tovariSans = love.graphics.newFont("assets/fonts/TovariSans.ttf", 36)
+            tovariSans = love.graphics.newFont("assets/fonts/TovariSans.ttf", 36),
+            tovariSans_small = love.graphics.newFont("assets/fonts/TovariSans.ttf", 22)
         }
     }
     return setmetatable(this, GameDirector)
@@ -61,12 +62,6 @@ function GameDirector:getLibrary(library)
 end
 
 function GameDirector:getFonts() return self.fonts end
-
-function GameDirector:keypressed(key, scancode, isrepeat)
-end
-
-function GameDirector:keyreleased(key, scancode)
-end
 
 function GameDirector:getWorld() return self.world end
 

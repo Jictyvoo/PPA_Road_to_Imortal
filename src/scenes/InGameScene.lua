@@ -14,11 +14,6 @@ function InGameScene:new()
     }, InGameScene)
     sceneDirector:addSubscene("gameOver", require "scenes.subscenes.GameOver":new(), true)
 
-    gameDirector:loadScene("tinkerMacro", "controllers.minigames.TinkerMacro")
-    gameDirector:loadScene("chatGado", "controllers.minigames.ChatGado")
-    gameDirector:loadScene("demonWords", "controllers.minigames.DemonWords")
-    gameDirector:loadScene("singPPA", "controllers.minigames.SingPPA")
-
     gameDirector:addButton(this, this.buttons, 'TinkerMacro', false, "tinkerMacro", {160, 384, 80, 170}, {width = 160, height = 384}, nil, true)
     gameDirector:addButton(this, this.buttons, 'ChatGado', false, "chatGado", {141, 83, 465, 200}, {width = 141, height = 83}, nil, true)
     gameDirector:addButton(this, this.buttons, 'DemonWords', false, "demonWords", {78, 117, 723, 46}, {width = 78, height = 117}, nil, true)
@@ -29,7 +24,9 @@ end
 
 function InGameScene:entering(sceneName)
     --print("enter", sceneName)
-    self.textbox = gameDirector:getLibrary("TextBox"):new(self.textScript[sceneName], gameDirector:getLibrary("Scribe"), self)
+    if sceneName then
+        self.textbox = gameDirector:getLibrary("TextBox"):new(self.textScript[sceneName], gameDirector:getLibrary("Scribe"), self)
+    end
 end
 
 function InGameScene:goingOut(sceneName)

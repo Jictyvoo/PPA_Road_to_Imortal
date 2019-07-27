@@ -108,7 +108,7 @@ function Button:draw()
             end
         end
         
-        love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
+        --love.graphics.rectangle("line", self.x - self.offsetX, self.y - self.offsetY, self.width, self.height)
     end
 end
 

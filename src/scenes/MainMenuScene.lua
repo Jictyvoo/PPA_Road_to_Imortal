@@ -1,6 +1,4 @@
-local MainMenuScene = {}
-
-MainMenuScene.__index = MainMenuScene
+local MainMenuScene = {}; MainMenuScene.__index = MainMenuScene
 
 local addButton = function(this, buttonName, sceneName, buttonDimensions, originalSize, callback)
     local scaleButtonName = "menu" .. buttonName
