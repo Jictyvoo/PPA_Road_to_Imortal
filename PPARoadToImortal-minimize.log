@@ -1,0 +1,2867 @@
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 1       0       1       4      4.00
+----------------------------------------------------------
+Local (in)             1       1      43      43      1.00
+TOTAL (in)             2       1      44      47      1.07
+----------------------------------------------------------
+Local (out)            1       1      43      43      1.00
+TOTAL (out)            2       1      44      47      1.07
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./conf.lua -> ./conf_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            33     142      4.30      33     142      4.30
+TK_NAME              122     581      4.76     122     581      4.76
+TK_NUMBER              7      15      2.14       7      15      2.14
+TK_STRING              4      56     14.00       4      56     14.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                122     122      1.00     122     122      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            42    2106     50.14       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                47      47      1.00      38      38      1.00
+TK_SPACE             170     793      4.66       1       1      1.00
+--------------------------------------------------------------------
+Total Elements       548    3862      7.05     328     955      2.91
+--------------------------------------------------------------------
+Total Tokens         289     916      3.17     289     916      3.17
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 7       0      59     285      4.83
+----------------------------------------------------------
+Local (in)            53      96     390    1715      4.40
+TOTAL (in)            60      96     449    2000      4.45
+----------------------------------------------------------
+Local (out)           15      96     390     390      1.00
+TOTAL (out)           22      96     449     675      1.50
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/scribe/popo/utf8-l.lua -> ./libs/scribe/popo/utf8-l_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           276    1091      3.95     276    1091      3.95
+TK_NAME              488    2186      4.48     488     861      1.76
+TK_NUMBER            127     306      2.41     127     260      2.05
+TK_STRING             36     822     22.83      36     822     22.83
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                573     624      1.09     573     624      1.09
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            62    2203     35.53       0       0      0.00
+TK_LCOMMENT            1    1521   1521.00       0       0      0.00
+TK_EOL               367     367      1.00     145     145      1.00
+TK_SPACE             968    1217      1.26     238     238      1.00
+--------------------------------------------------------------------
+Total Elements      2899   10337      3.57    1884    4041      2.14
+--------------------------------------------------------------------
+Total Tokens        1501    5029      3.35    1501    3658      2.44
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                14       0      90     543      6.03
+----------------------------------------------------------
+Local (in)            60     185     959    3519      3.67
+TOTAL (in)            74     185    1049    4062      3.87
+----------------------------------------------------------
+Local (out)           13     185     959    1058      1.10
+TOTAL (out)           27     185    1049    1601      1.53
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/scribe/popo/Text.lua -> ./libs/scribe/popo/Text_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           695    2257      3.25     695    2257      3.25
+TK_NAME             1414    7847      5.55    1414    5386      3.81
+TK_NUMBER            155     155      1.00     155     155      1.00
+TK_STRING             99     465      4.70      99     465      4.70
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP               1536    1653      1.08    1536    1653      1.08
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            33    1062     32.18       0       0      0.00
+TK_LCOMMENT            6    1649    274.83       0       0      0.00
+TK_EOL               543     543      1.00     373     373      1.00
+TK_SPACE            2219    7603      3.43     543     543      1.00
+--------------------------------------------------------------------
+Total Elements      6701   23234      3.47    4816   10832      2.25
+--------------------------------------------------------------------
+Total Tokens        3900   12377      3.17    3900    9916      2.54
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 8       0      41     189      4.61
+----------------------------------------------------------
+Local (in)            47      92     374    1370      3.66
+TOTAL (in)            55      92     415    1559      3.76
+----------------------------------------------------------
+Local (out)            9      92     374     620      1.66
+TOTAL (out)           17      92     415     809      1.95
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/scribe/Scribe.lua -> ./libs/scribe/Scribe_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           195     737      3.78     195     737      3.78
+TK_NAME              664    3011      4.53     664    2261      3.41
+TK_NUMBER             77     128      1.66      77     128      1.66
+TK_STRING             32     367     11.47      32     367     11.47
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                800     852      1.06     800     852      1.06
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            56    3072     54.86       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               333     333      1.00      94      94      1.00
+TK_SPACE             971    2363      2.43     153     153      1.00
+--------------------------------------------------------------------
+Total Elements      3129   10863      3.47    2016    4592      2.28
+--------------------------------------------------------------------
+Total Tokens        1769    5095      2.88    1769    4345      2.46
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0      10     107     10.70
+----------------------------------------------------------
+Local (in)            12      16      59     377      6.39
+TOTAL (in)            16      16      69     484      7.01
+----------------------------------------------------------
+Local (out)            3      16      59     110      1.86
+TOTAL (out)            7      16      69     217      3.14
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/MoonJohn/examples/SplashScreen.lua -> ./libs/MoonJohn/examples/SplashScreen_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            33     144      4.36      33     144      4.36
+TK_NAME              114     882      7.74     114     615      5.39
+TK_NUMBER             11      15      1.36      11      15      1.36
+TK_STRING              8     132     16.50       8     132     16.50
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                145     146      1.01     145     146      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                53      53      1.00      18      18      1.00
+TK_SPACE             124     279      2.25      19      19      1.00
+--------------------------------------------------------------------
+Total Elements       489    1651      3.38     349    1089      3.12
+--------------------------------------------------------------------
+Total Tokens         312    1319      4.23     312    1052      3.37
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 5       0      10      53      5.30
+----------------------------------------------------------
+Local (in)            10      12      35     159      4.54
+TOTAL (in)            15      12      45     212      4.71
+----------------------------------------------------------
+Local (out)            5      12      35      44      1.26
+TOTAL (out)           10      12      45      97      2.16
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/MoonJohn/examples/subscenes/PauseGame.lua -> ./libs/MoonJohn/examples/subscenes/PauseGame_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            15      74      4.93      15      74      4.93
+TK_NAME               59     340      5.76      59     225      3.81
+TK_NUMBER             18      32      1.78      18      29      1.61
+TK_STRING              3      22      7.33       3      22      7.33
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 94      95      1.01      94      95      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                30      30      1.00       7       7      1.00
+TK_SPACE              81     127      1.57      10      10      1.00
+--------------------------------------------------------------------
+Total Elements       301     720      2.39     207     462      2.23
+--------------------------------------------------------------------
+Total Tokens         190     563      2.96     190     445      2.34
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 1       0       5      20      4.00
+----------------------------------------------------------
+Local (in)             4       4      17      99      5.82
+TOTAL (in)             5       4      22     119      5.41
+----------------------------------------------------------
+Local (out)            3       4      17      20      1.18
+TOTAL (out)            4       4      22      40      1.82
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/MoonJohn/Transitions.lua -> ./libs/MoonJohn/Transitions_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            14      70      5.00      14      70      5.00
+TK_NAME               43     291      6.77      43     212      4.93
+TK_NUMBER             15      21      1.40      15      19      1.27
+TK_STRING              1       6      6.00       1       6      6.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 64      66      1.03      64      66      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                24      24      1.00       9       9      1.00
+TK_SPACE              59     152      2.58       8       8      1.00
+--------------------------------------------------------------------
+Total Elements       221     630      2.85     155     390      2.52
+--------------------------------------------------------------------
+Total Tokens         138     454      3.29     138     373      2.70
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 9       0      17     120      7.06
+----------------------------------------------------------
+Local (in)            51      90     332    2015      6.07
+TOTAL (in)            60      90     349    2135      6.12
+----------------------------------------------------------
+Local (out)            7      90     332     566      1.70
+TOTAL (out)           16      90     349     686      1.97
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/MoonJohn/MoonJohn.lua -> ./libs/MoonJohn/MoonJohn_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           225     967      4.30     225     967      4.30
+TK_NAME              512    3800      7.42     512    2351      4.59
+TK_NUMBER              3       3      1.00       3       3      1.00
+TK_STRING             25     404     16.16      25     402     16.08
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                611     629      1.03     611     629      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            3     205     68.33       0       0      0.00
+TK_EOL               188     188      1.00      95      95      1.00
+TK_SPACE             602    1324      2.20     147     147      1.00
+--------------------------------------------------------------------
+Total Elements      2170    7520      3.47    1619    4594      2.84
+--------------------------------------------------------------------
+Total Tokens        1377    5803      4.21    1377    4352      3.16
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       4      26      6.50
+----------------------------------------------------------
+Local (in)             3       3       7      71     10.14
+TOTAL (in)             5       3      11      97      8.82
+----------------------------------------------------------
+Local (out)            2       3       7       7      1.00
+TOTAL (out)            4       3      11      33      3.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/MoonJohn/init.lua -> ./libs/MoonJohn/init_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             4      21      5.25       4      21      5.25
+TK_NAME               16     132      8.25      16      68      4.25
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING              5      41      8.20       5      41      8.20
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 28      31      1.11      28      31      1.11
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                 7       7      1.00       0       0      0.00
+TK_SPACE              21      26      1.24       3       3      1.00
+--------------------------------------------------------------------
+Total Elements        82     258      3.15      57     164      2.88
+--------------------------------------------------------------------
+Total Tokens          54     225      4.17      54     161      2.98
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 7       0      56     238      4.25
+----------------------------------------------------------
+Local (in)            46      84     373    1688      4.53
+TOTAL (in)            53      84     429    1926      4.49
+----------------------------------------------------------
+Local (out)            9      84     373     856      2.29
+TOTAL (out)           16      84     429    1094      2.55
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/push.lua -> ./libs/push_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           204     789      3.87     204     789      3.87
+TK_NAME              728    4194      5.76     728    3362      4.62
+TK_NUMBER             29      34      1.17      29      34      1.17
+TK_STRING             13      92      7.08      13      92      7.08
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                785     797      1.02     785     797      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            19    1406     74.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               276     276      1.00     101     101      1.00
+TK_SPACE             722    1137      1.57     175     175      1.00
+--------------------------------------------------------------------
+Total Elements      2777    8725      3.14    2036    5350      2.63
+--------------------------------------------------------------------
+Total Tokens        1760    5906      3.36    1760    5074      2.88
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       3      17      5.67
+----------------------------------------------------------
+Local (in)             4       4      15     113      7.53
+TOTAL (in)             6       4      18     130      7.22
+----------------------------------------------------------
+Local (out)            2       4      15      15      1.00
+TOTAL (out)            4       4      18      32      1.78
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/Sanghost/examples/saveItself.lua -> ./libs/Sanghost/examples/saveItself_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             6      23      3.83       6      23      3.83
+TK_NAME               30     177      5.90      30      79      2.63
+TK_NUMBER              2       2      1.00       2       2      1.00
+TK_STRING              8      71      8.88       8      71      8.88
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 41      41      1.00      41      41      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                13      13      1.00       4       4      1.00
+TK_SPACE              25      25      1.00       5       5      1.00
+--------------------------------------------------------------------
+Total Elements       126     352      2.79      97     225      2.32
+--------------------------------------------------------------------
+Total Tokens          88     314      3.57      88     216      2.45
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 5       0       8      61      7.62
+----------------------------------------------------------
+Local (in)            10      17      59     413      7.00
+TOTAL (in)            15      17      67     474      7.07
+----------------------------------------------------------
+Local (out)            6      17      59      86      1.46
+TOTAL (out)           11      17      67     147      2.19
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/Sanghost/Sanghost.lua -> ./libs/Sanghost/Sanghost_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            34     145      4.26      34     145      4.26
+TK_NAME               74     541      7.31      74     214      2.89
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING              4      72     18.00       4      72     18.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 94      96      1.02      94      96      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                44      44      1.00      17      17      1.00
+TK_SPACE              92     254      2.76      22      22      1.00
+--------------------------------------------------------------------
+Total Elements       343    1152      3.36     246     566      2.30
+--------------------------------------------------------------------
+Total Tokens         207     854      4.13     207     527      2.55
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       2      16      8.00
+----------------------------------------------------------
+Local (in)            21      39     141     972      6.89
+TOTAL (in)            23      39     143     988      6.91
+----------------------------------------------------------
+Local (out)            8      39     141     291      2.06
+TOTAL (out)           10      39     143     307      2.15
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/Pixelurite/SpriteAnimation.lua -> ./libs/Pixelurite/SpriteAnimation_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            77     305      3.96      77     305      3.96
+TK_NAME              208    1587      7.63     208     906      4.36
+TK_NUMBER             15      21      1.40      15      20      1.33
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                191     195      1.02     191     195      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            1      54     54.00       0       0      0.00
+TK_EOL                78      78      1.00      41      41      1.00
+TK_SPACE             249     443      1.78      76      76      1.00
+--------------------------------------------------------------------
+Total Elements       820    2683      3.27     609    1543      2.53
+--------------------------------------------------------------------
+Total Tokens         492    2108      4.28     492    1426      2.90
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 9       0      18     110      6.11
+----------------------------------------------------------
+Local (in)            26      32     104     837      8.05
+TOTAL (in)            35      32     122     947      7.76
+----------------------------------------------------------
+Local (out)            9      32     104     143      1.38
+TOTAL (out)           18      32     122     253      2.07
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/Pixelurite/SpriteSheet.lua -> ./libs/Pixelurite/SpriteSheet_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            61     260      4.26      61     260      4.26
+TK_NAME              185    1300      7.03     185     606      3.28
+TK_NUMBER              4       4      1.00       4       4      1.00
+TK_STRING             13     136     10.46      13     136     10.46
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                218     225      1.03     218     225      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                68      68      1.00      28      28      1.00
+TK_SPACE             202     370      1.83      48      48      1.00
+--------------------------------------------------------------------
+Total Elements       752    2363      3.14     558    1307      2.34
+--------------------------------------------------------------------
+Total Tokens         482    1925      3.99     482    1231      2.55
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0       4      23      5.75
+----------------------------------------------------------
+Local (in)            20      26      77     410      5.32
+TOTAL (in)            24      26      81     433      5.35
+----------------------------------------------------------
+Local (out)            8      26      77      80      1.04
+TOTAL (out)           12      26      81     103      1.27
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/Pixelurite/Stack.lua -> ./libs/Pixelurite/Stack_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            70     350      5.00      70     350      5.00
+TK_NAME              123     710      5.77     123     380      3.09
+TK_NUMBER              3       3      1.00       3       3      1.00
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                143     144      1.01     143     144      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                87      87      1.00      27      27      1.00
+TK_SPACE             204     686      3.36      40      40      1.00
+--------------------------------------------------------------------
+Total Elements       631    1980      3.14     407     944      2.32
+--------------------------------------------------------------------
+Total Tokens         340    1207      3.55     340     877      2.58
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       4      26      6.50
+----------------------------------------------------------
+Local (in)            17      17      41     453     11.05
+TOTAL (in)            19      17      45     479     10.64
+----------------------------------------------------------
+Local (out)            9      17      41      41      1.00
+TOTAL (out)           11      17      45      67      1.49
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./libs/Pixelurite/init.lua -> ./libs/Pixelurite/init_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            23     114      4.96      23     114      4.96
+TK_NAME               59     609     10.32      59     197      3.34
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING              5      48      9.60       5      48      9.60
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 75      78      1.04      75      78      1.04
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                29      29      1.00       8       8      1.00
+TK_SPACE              67     115      1.72      17      17      1.00
+--------------------------------------------------------------------
+Total Elements       259     993      3.83     188     462      2.46
+--------------------------------------------------------------------
+Total Tokens         163     849      5.21     163     437      2.68
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 3       0       3      21      7.00
+----------------------------------------------------------
+Local (in)            14      23      58     284      4.90
+TOTAL (in)            17      23      61     305      5.00
+----------------------------------------------------------
+Local (out)            5      23      58     106      1.83
+TOTAL (out)            8      23      61     127      2.08
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./models/business/World.lua -> ./models/business/World_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            32     153      4.78      32     153      4.78
+TK_NAME               84     528      6.29      84     350      4.17
+TK_NUMBER              2       3      1.50       2       3      1.50
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 99      99      1.00      99      99      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                43      43      1.00      14      14      1.00
+TK_SPACE              67     121      1.81      19      19      1.00
+--------------------------------------------------------------------
+Total Elements       328     947      2.89     251     638      2.54
+--------------------------------------------------------------------
+Total Tokens         218     783      3.59     218     605      2.78
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             4       4      10      80      8.00
+TOTAL (in)             4       4      10      80      8.00
+----------------------------------------------------------
+Local (out)            3       4      10      13      1.30
+TOTAL (out)            3       4      10      13      1.30
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./models/TextScript.lua -> ./models/TextScript_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             7      35      5.00       7      35      5.00
+TK_NAME               17     140      8.24      17      73      4.29
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING             38    4396    115.68      38    4370    115.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 68      68      1.00      68      68      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                55      55      1.00       2       2      1.00
+TK_SPACE              76     518      6.82       6       6      1.00
+--------------------------------------------------------------------
+Total Elements       262    5212     19.89     139    4554     32.76
+--------------------------------------------------------------------
+Total Tokens         131    4639     35.41     131    4546     34.70
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./models/PortugueseWords.lua -> ./models/PortugueseWords_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD         21591   86366      4.00   21591   86366      4.00
+TK_NAME                0       0      0.00       0       0      0.00
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING          21590  161038      7.46   21590  161038      7.46
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP              86361   86361      1.00   86361   86361      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                 0       0      0.00       0       0      0.00
+TK_SPACE               1       1      1.00       0       0      0.00
+--------------------------------------------------------------------
+Total Elements    129544  333766      2.58  129543  333765      2.58
+--------------------------------------------------------------------
+Total Tokens      129543  333765      2.58  129543  333765      2.58
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 6       0      30     293      9.77
+----------------------------------------------------------
+Local (in)             6       6      14      46      3.29
+TOTAL (in)            12       6      44     339      7.70
+----------------------------------------------------------
+Local (out)            2       6      14      14      1.00
+TOTAL (out)            8       6      44     307      6.98
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./main.lua -> ./main_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            15      70      4.67      15      70      4.67
+TK_NAME               75     577      7.69      75     545      7.27
+TK_NUMBER              2       6      3.00       2       6      3.00
+TK_STRING             23     321     13.96      23     321     13.96
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                122     126      1.03     122     126      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             3      91     30.33       0       0      0.00
+TK_LCOMMENT            1      91     91.00       0       0      0.00
+TK_EOL                28      28      1.00       4       4      1.00
+TK_SPACE              72     139      1.93       8       8      1.00
+--------------------------------------------------------------------
+Total Elements       342    1449      4.24     250    1080      4.32
+--------------------------------------------------------------------
+Total Tokens         238    1100      4.62     238    1068      4.49
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/gui/start_button.lua -> ./assets/gui/start_button_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             9      46      5.11       9      46      5.11
+TK_NAME               73     283      3.88      73     283      3.88
+TK_NUMBER             42     102      2.43      42     102      2.43
+TK_STRING              4      71     17.75       4      71     17.75
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                186     186      1.00     186     186      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                94      94      1.00       0       0      0.00
+TK_SPACE             239     441      1.85       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       648    1223      1.89     315     688      2.18
+--------------------------------------------------------------------
+Total Tokens         315     688      2.18     315     688      2.18
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/ppa_animation.lua -> ./assets/sprites/ppa_animation_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            13      66      5.08      13      66      5.08
+TK_NAME              105     451      4.30     105     451      4.30
+TK_NUMBER             62     152      2.45      62     152      2.45
+TK_STRING              4      72     18.00       4      72     18.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                266     266      1.00     266     266      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               134     134      1.00       0       0      0.00
+TK_SPACE             343     641      1.87       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       928    1782      1.92     451    1007      2.23
+--------------------------------------------------------------------
+Total Tokens         451    1007      2.23     451    1007      2.23
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/tinkerMacro/macro_button.lua -> ./assets/sprites/tinkerMacro/macro_button_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             9      46      5.11       9      46      5.11
+TK_NAME               73     283      3.88      73     283      3.88
+TK_NUMBER             42      87      2.07      42      87      2.07
+TK_STRING              4      71     17.75       4      71     17.75
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                186     186      1.00     186     186      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                94      94      1.00       0       0      0.00
+TK_SPACE             239     441      1.85       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       648    1208      1.86     315     673      2.14
+--------------------------------------------------------------------
+Total Tokens         315     673      2.14     315     673      2.14
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/tinkerMacro/tinker_side.lua -> ./assets/sprites/tinkerMacro/tinker_side_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             7      36      5.14       7      36      5.14
+TK_NAME               57     238      4.18      57     238      4.18
+TK_NUMBER             32      76      2.38      32      76      2.38
+TK_STRING              4      70     17.50       4      70     17.50
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                146     146      1.00     146     146      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                74      74      1.00       0       0      0.00
+TK_SPACE             187     341      1.82       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       508     981      1.93     247     566      2.29
+--------------------------------------------------------------------
+Total Tokens         247     566      2.29     247     566      2.29
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/demonWords/distractionPPA.lua -> ./assets/sprites/demonWords/distractionPPA_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            11      56      5.09      11      56      5.09
+TK_NAME               89     387      4.35      89     387      4.35
+TK_NUMBER             52     127      2.44      52     127      2.44
+TK_STRING              4      73     18.25       4      73     18.25
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                226     226      1.00     226     226      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               114     114      1.00       0       0      0.00
+TK_SPACE             291     541      1.86       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       788    1524      1.93     383     869      2.27
+--------------------------------------------------------------------
+Total Tokens         383     869      2.27     383     869      2.27
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/demonWords/letterButton.lua -> ./assets/sprites/demonWords/letterButton_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             9      46      5.11       9      46      5.11
+TK_NAME               73     283      3.88      73     283      3.88
+TK_NUMBER             42     102      2.43      42     102      2.43
+TK_STRING              4      71     17.75       4      71     17.75
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                186     186      1.00     186     186      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                94      94      1.00       0       0      0.00
+TK_SPACE             239     441      1.85       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       648    1223      1.89     315     688      2.18
+--------------------------------------------------------------------
+Total Tokens         315     688      2.18     315     688      2.18
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/singPPA/sing_ppa.lua -> ./assets/sprites/singPPA/sing_ppa_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             5      26      5.20       5      26      5.20
+TK_NAME               41     165      4.02      41     165      4.02
+TK_NUMBER             22      52      2.36      22      52      2.36
+TK_STRING              4      67     16.75       4      67     16.75
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                106     106      1.00     106     106      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                54      54      1.00       0       0      0.00
+TK_SPACE             135     241      1.79       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       368     711      1.93     179     416      2.32
+--------------------------------------------------------------------
+Total Tokens         179     416      2.32     179     416      2.32
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/singPPA/ears_ship.lua -> ./assets/sprites/singPPA/ears_ship_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             9      46      5.11       9      46      5.11
+TK_NAME               73     297      4.07      73     297      4.07
+TK_NUMBER             42     102      2.43      42     102      2.43
+TK_STRING              4      68     17.00       4      68     17.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                186     186      1.00     186     186      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                94      94      1.00       0       0      0.00
+TK_SPACE             239     441      1.85       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       648    1234      1.90     315     699      2.22
+--------------------------------------------------------------------
+Total Tokens         315     699      2.22     315     699      2.22
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./assets/sprites/singPPA/pipe_ppa.lua -> ./assets/sprites/singPPA/pipe_ppa_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             5      26      5.20       5      26      5.20
+TK_NAME               41     165      4.02      41     165      4.02
+TK_NUMBER             22      52      2.36      22      52      2.36
+TK_STRING              4      67     16.75       4      67     16.75
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                106     106      1.00     106     106      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                54      54      1.00       0       0      0.00
+TK_SPACE             135     241      1.79       0       0      0.00
+--------------------------------------------------------------------
+Total Elements       368     711      1.93     179     416      2.32
+--------------------------------------------------------------------
+Total Tokens         179     416      2.32     179     416      2.32
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 3       0       7      38      5.43
+----------------------------------------------------------
+Local (in)            18      23      60     263      4.38
+TOTAL (in)            21      23      67     301      4.49
+----------------------------------------------------------
+Local (out)            9      23      60     105      1.75
+TOTAL (out)           12      23      67     143      2.13
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./util/Label.lua -> ./util/Label_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            21      96      4.57      21      96      4.57
+TK_NAME              101     482      4.77     101     324      3.21
+TK_NUMBER              7       7      1.00       7       7      1.00
+TK_STRING              2      10      5.00       2      10      5.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                117     118      1.01     117     118      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             1      95     95.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                31      31      1.00       8       8      1.00
+TK_SPACE             106     166      1.57      19      19      1.00
+--------------------------------------------------------------------
+Total Elements       387    1005      2.60     276     582      2.11
+--------------------------------------------------------------------
+Total Tokens         249     713      2.86     249     555      2.23
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0       9      54      6.00
+----------------------------------------------------------
+Local (in)            24      51     145     804      5.54
+TOTAL (in)            28      51     154     858      5.57
+----------------------------------------------------------
+Local (out)           10      51     145     292      2.01
+TOTAL (out)           14      51     154     346      2.25
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./util/ui/ButtonManager.lua -> ./util/ui/ButtonManager_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            83     316      3.81      83     316      3.81
+TK_NAME              217    1512      6.97     217    1000      4.61
+TK_NUMBER              6       6      1.00       6       6      1.00
+TK_STRING             18     156      8.67      18     156      8.67
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                243     253      1.04     243     253      1.04
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                92      92      1.00      43      43      1.00
+TK_SPACE             246     573      2.33      52      52      1.00
+--------------------------------------------------------------------
+Total Elements       906    2908      3.21     663    1826      2.75
+--------------------------------------------------------------------
+Total Tokens         568    2243      3.95     568    1731      3.05
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0       9      50      5.56
+----------------------------------------------------------
+Local (in)            14      21      80     467      5.84
+TOTAL (in)            18      21      89     517      5.81
+----------------------------------------------------------
+Local (out)            9      21      80     200      2.50
+TOTAL (out)           13      21      89     250      2.81
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./util/ui/ProgressBar.lua -> ./util/ui/ProgressBar_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            42     179      4.26      42     179      4.26
+TK_NAME              141     802      5.69     141     535      3.79
+TK_NUMBER             14      18      1.29      14      18      1.29
+TK_STRING              3      80     26.67       3      80     26.67
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                158     158      1.00     158     158      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                57      57      1.00      26      26      1.00
+TK_SPACE             147     278      1.89      30      30      1.00
+--------------------------------------------------------------------
+Total Elements       563    1572      2.79     415    1026      2.47
+--------------------------------------------------------------------
+Total Tokens         359    1237      3.45     359     970      2.70
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 3       0       6      32      5.33
+----------------------------------------------------------
+Local (in)            30      68     239    1083      4.53
+TOTAL (in)            33      68     245    1115      4.55
+----------------------------------------------------------
+Local (out)           10      68     239     602      2.52
+TOTAL (out)           13      68     245     634      2.59
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./util/ui/Button.lua -> ./util/ui/Button_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           126     544      4.32     126     544      4.32
+TK_NAME              382    2050      5.37     382    1569      4.11
+TK_NUMBER             11      14      1.27      11      14      1.27
+TK_STRING             17     150      8.82      17     150      8.82
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                400     415      1.04     400     415      1.04
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             2     208    104.00       0       0      0.00
+TK_LCOMMENT            1      35     35.00       0       0      0.00
+TK_EOL               115     115      1.00      52      52      1.00
+TK_SPACE             411     781      1.90      91      91      1.00
+--------------------------------------------------------------------
+Total Elements      1466    4312      2.94    1080    2835      2.62
+--------------------------------------------------------------------
+Total Tokens         937    3173      3.39     937    2692      2.87
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 5       0       7      39      5.57
+----------------------------------------------------------
+Local (in)            16      43     208    1284      6.17
+TOTAL (in)            21      43     215    1323      6.15
+----------------------------------------------------------
+Local (out)            7      43     208     325      1.56
+TOTAL (out)           12      43     215     364      1.69
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./util/ScaleDimension.lua -> ./util/ScaleDimension_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           108     402      3.72     108     402      3.72
+TK_NAME              377    2819      7.48     377    1860      4.93
+TK_NUMBER             12      16      1.33      12      16      1.33
+TK_STRING              2      14      7.00       2      14      7.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                400     402      1.00     400     402      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               107     107      1.00      60      60      1.00
+TK_SPACE             395     897      2.27      87      87      1.00
+--------------------------------------------------------------------
+Total Elements      1402    4657      3.32    1047    2841      2.71
+--------------------------------------------------------------------
+Total Tokens         900    3653      4.06     900    2694      2.99
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0      12      56      4.67
+----------------------------------------------------------
+Local (in)            17      24      81     408      5.04
+TOTAL (in)            19      24      93     464      4.99
+----------------------------------------------------------
+Local (out)            9      24      81     135      1.67
+TOTAL (out)           11      24      93     191      2.05
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./util/TextBox.lua -> ./util/TextBox_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            34     146      4.29      34     146      4.29
+TK_NAME              157     934      5.95     157     661      4.21
+TK_NUMBER             35      65      1.86      35      62      1.77
+TK_STRING              4      25      6.25       4      25      6.25
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                223     224      1.00     223     224      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                57      57      1.00      16      16      1.00
+TK_SPACE             192     388      2.02      29      29      1.00
+--------------------------------------------------------------------
+Total Elements       703    1839      2.62     499    1163      2.33
+--------------------------------------------------------------------
+Total Tokens         454    1394      3.07     454    1118      2.46
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 6       0      20     174      8.70
+----------------------------------------------------------
+Local (in)            26      36      97     786      8.10
+TOTAL (in)            32      36     117     960      8.21
+----------------------------------------------------------
+Local (out)           11      36      97     136      1.40
+TOTAL (out)           17      36     117     310      2.65
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/GameDirector.lua -> ./controllers/GameDirector_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            46     224      4.87      46     224      4.87
+TK_NAME              171    1372      8.02     171     722      4.22
+TK_NUMBER              2       4      2.00       2       4      2.00
+TK_STRING             12     218     18.17      12     218     18.17
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                188     189      1.01     188     189      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             7     130     18.57       0       0      0.00
+TK_LCOMMENT            1      31     31.00       0       0      0.00
+TK_EOL                73      73      1.00      12      12      1.00
+TK_SPACE             181     333      1.84      41      41      1.00
+--------------------------------------------------------------------
+Total Elements       682    2574      3.77     473    1410      2.98
+--------------------------------------------------------------------
+Total Tokens         420    2007      4.78     420    1357      3.23
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 1       0       1      12     12.00
+----------------------------------------------------------
+Local (in)             4       7      24     139      5.79
+TOTAL (in)             5       7      25     151      6.04
+----------------------------------------------------------
+Local (out)            3       7      24      54      2.25
+TOTAL (out)            4       7      25      66      2.64
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/SingPPA/models/business/LifeForm.lua -> ./controllers/minigames/SingPPA/models/business/LifeForm_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            13      73      5.62      13      73      5.62
+TK_NAME               34     257      7.56      34     172      5.06
+TK_NUMBER              2       2      1.00       2       2      1.00
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 37      38      1.03      37      38      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                19      19      1.00       7       7      1.00
+TK_SPACE              39      65      1.67      11      11      1.00
+--------------------------------------------------------------------
+Total Elements       145     454      3.13     105     303      2.89
+--------------------------------------------------------------------
+Total Tokens          87     370      4.25      87     285      3.28
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       8      52      6.50
+----------------------------------------------------------
+Local (in)            14      21      67     374      5.58
+TOTAL (in)            16      21      75     426      5.68
+----------------------------------------------------------
+Local (out)            6      21      67      67      1.00
+TOTAL (out)            8      21      75     119      1.59
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/SingPPA/models/business/WorldFunctions.lua -> ./controllers/minigames/SingPPA/models/business/WorldFunctions_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            43     185      4.30      43     185      4.30
+TK_NAME              116     702      6.05     116     395      3.41
+TK_NUMBER             16      36      2.25      16      36      2.25
+TK_STRING              6      50      8.33       6      50      8.33
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                164     168      1.02     164     168      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                39      39      1.00      19      19      1.00
+TK_SPACE             150     280      1.87      34      34      1.00
+--------------------------------------------------------------------
+Total Elements       535    1460      2.73     399     887      2.22
+--------------------------------------------------------------------
+Total Tokens         346    1141      3.30     346     834      2.41
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0       9      48      5.33
+----------------------------------------------------------
+Local (in)            19      39     164     806      4.91
+TOTAL (in)            23      39     173     854      4.94
+----------------------------------------------------------
+Local (out)            6      39     164     395      2.41
+TOTAL (out)           10      39     173     443      2.56
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/SingPPA/models/entities/Player.lua -> ./controllers/minigames/SingPPA/models/entities/Player_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            84     369      4.39      84     369      4.39
+TK_NAME              329    2073      6.30     329    1662      5.05
+TK_NUMBER             35      54      1.54      35      52      1.49
+TK_STRING             32     251      7.84      32     251      7.84
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                432     446      1.03     432     446      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             3     103     34.33       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               102     102      1.00      34      34      1.00
+TK_SPACE             335     602      1.80      60      60      1.00
+--------------------------------------------------------------------
+Total Elements      1353    4000      2.96    1007    2874      2.85
+--------------------------------------------------------------------
+Total Tokens         913    3193      3.50     913    2780      3.04
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0       9      48      5.33
+----------------------------------------------------------
+Local (in)            13      27     118     610      5.17
+TOTAL (in)            17      27     127     658      5.18
+----------------------------------------------------------
+Local (out)            6      27     118     286      2.42
+TOTAL (out)           10      27     127     334      2.63
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/SingPPA/models/entities/PipePPA.lua -> ./controllers/minigames/SingPPA/models/entities/PipePPA_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            51     226      4.43      51     226      4.43
+TK_NAME              241    1542      6.40     241    1218      5.05
+TK_NUMBER             38      65      1.71      38      64      1.68
+TK_STRING              5     104     20.80       5     104     20.80
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                323     326      1.01     323     326      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             4     174     43.50       0       0      0.00
+TK_LCOMMENT            1      43     43.00       0       0      0.00
+TK_EOL                83      83      1.00      27      27      1.00
+TK_SPACE             219     408      1.86      35      35      1.00
+--------------------------------------------------------------------
+Total Elements       966    2971      3.08     721    2000      2.77
+--------------------------------------------------------------------
+Total Tokens         659    2263      3.43     659    1938      2.94
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 3       0       7      38      5.43
+----------------------------------------------------------
+Local (in)            13      22      89     384      4.31
+TOTAL (in)            16      22      96     422      4.40
+----------------------------------------------------------
+Local (out)           11      22      89     164      1.84
+TOTAL (out)           14      22      96     202      2.10
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/SingPPA/models/entities/Bullet.lua -> ./controllers/minigames/SingPPA/models/entities/Bullet_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            50     219      4.38      50     219      4.38
+TK_NAME              176    1066      6.06     176     846      4.81
+TK_NUMBER             21      32      1.52      21      32      1.52
+TK_STRING              7      49      7.00       7      49      7.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                217     222      1.02     217     222      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             2      98     49.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                60      60      1.00      23      23      1.00
+TK_SPACE             183     348      1.90      30      30      1.00
+--------------------------------------------------------------------
+Total Elements       717    2094      2.92     525    1421      2.71
+--------------------------------------------------------------------
+Total Tokens         472    1588      3.36     472    1368      2.90
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 2       0       6      32      5.33
+----------------------------------------------------------
+Local (in)             9      10      38     170      4.47
+TOTAL (in)            11      10      44     202      4.59
+----------------------------------------------------------
+Local (out)            8      10      38      62      1.63
+TOTAL (out)           10      10      44      94      2.14
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/SingPPA/models/Wall.lua -> ./controllers/minigames/SingPPA/models/Wall_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            16      66      4.12      16      66      4.12
+TK_NAME               84     466      5.55      84     358      4.26
+TK_NUMBER              5       7      1.40       5       7      1.40
+TK_STRING              3      20      6.67       3      20      6.67
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                104     104      1.00     104     104      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                25      25      1.00       6       6      1.00
+TK_SPACE              66     135      2.05      14      14      1.00
+--------------------------------------------------------------------
+Total Elements       304     823      2.71     233     575      2.47
+--------------------------------------------------------------------
+Total Tokens         213     663      3.11     213     555      2.61
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                14       0      58     381      6.57
+----------------------------------------------------------
+Local (in)            29      78     243    1266      5.21
+TOTAL (in)            43      78     301    1647      5.47
+----------------------------------------------------------
+Local (out)           13      78     243     399      1.64
+TOTAL (out)           27      78     301     780      2.59
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/SingPPA/init.lua -> ./controllers/minigames/SingPPA/init_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           142     593      4.18     142     593      4.18
+TK_NAME              494    3383      6.85     494    2516      5.09
+TK_NUMBER             54      84      1.56      54      81      1.50
+TK_STRING             38     648     17.05      38     648     17.05
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                703     711      1.01     703     711      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             2      20     10.00       0       0      0.00
+TK_LCOMMENT            1      65     65.00       0       0      0.00
+TK_EOL               158     158      1.00      53      53      1.00
+TK_SPACE             534    1287      2.41      80      80      1.00
+--------------------------------------------------------------------
+Total Elements      2127    6949      3.27    1565    4682      2.99
+--------------------------------------------------------------------
+Total Tokens        1432    5419      3.78    1432    4549      3.18
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                12       0      26     148      5.69
+----------------------------------------------------------
+Local (in)            24      45     204    1071      5.25
+TOTAL (in)            36      45     230    1219      5.30
+----------------------------------------------------------
+Local (out)            7      45     204     390      1.91
+TOTAL (out)           19      45     230     538      2.34
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/TinkerMacro.lua -> ./controllers/minigames/TinkerMacro_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           129     486      3.77     129     486      3.77
+TK_NAME              376    2649      7.05     376    1968      5.23
+TK_NUMBER             52      85      1.63      52      83      1.60
+TK_STRING             28     485     17.32      28     485     17.32
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                507     518      1.02     507     518      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               118     118      1.00      64      64      1.00
+TK_SPACE             499    1271      2.55      84      84      1.00
+--------------------------------------------------------------------
+Total Elements      1710    5612      3.28    1241    3688      2.97
+--------------------------------------------------------------------
+Total Tokens        1093    4223      3.86    1093    3540      3.24
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 1       0       1      12     12.00
+----------------------------------------------------------
+Local (in)             3       3       9      72      8.00
+TOTAL (in)             4       3      10      84      8.40
+----------------------------------------------------------
+Local (out)            2       3       9      12      1.33
+TOTAL (out)            3       3      10      24      2.40
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/FinalLevel.lua -> ./controllers/minigames/FinalLevel_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             6      33      5.50       6      33      5.50
+TK_NAME               11      90      8.18      11      30      2.73
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 15      15      1.00      15      15      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                10      10      1.00       3       3      1.00
+TK_SPACE              17      33      1.94       5       5      1.00
+--------------------------------------------------------------------
+Total Elements        60     181      3.02      41      86      2.10
+--------------------------------------------------------------------
+Total Tokens          33     138      4.18      33      78      2.36
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             4       9      22     114      5.18
+TOTAL (in)             4       9      22     114      5.18
+----------------------------------------------------------
+Local (out)            3       9      22      22      1.00
+TOTAL (out)            3       9      22      22      1.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/ChatGado/models/DecisionStates.lua -> ./controllers/minigames/ChatGado/models/DecisionStates_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            27     133      4.93      27     133      4.93
+TK_NAME              109     803      7.37     109     711      6.52
+TK_NUMBER              0       0      0.00       0       0      0.00
+TK_STRING             38    1880     49.47      38    1880     49.47
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                215     215      1.00     215     215      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             2     170     85.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               110     110      1.00       1       1      1.00
+TK_SPACE             285     968      3.40      13      13      1.00
+--------------------------------------------------------------------
+Total Elements       787    4279      5.44     404    2953      7.31
+--------------------------------------------------------------------
+Total Tokens         390    3031      7.77     390    2939      7.54
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                15       0      37     200      5.41
+----------------------------------------------------------
+Local (in)            29      61     175     909      5.19
+TOTAL (in)            44      61     212    1109      5.23
+----------------------------------------------------------
+Local (out)            8      61     175     301      1.72
+TOTAL (out)           23      61     212     501      2.36
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/ChatGado/init.lua -> ./controllers/minigames/ChatGado/init_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           106     401      3.78     106     401      3.78
+TK_NAME              321    2138      6.66     321    1530      4.77
+TK_NUMBER             46     102      2.22      46      94      2.04
+TK_STRING             32     301      9.41      32     301      9.41
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                468     478      1.02     468     478      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               100     100      1.00      38      38      1.00
+TK_SPACE             384     667      1.74      76      76      1.00
+--------------------------------------------------------------------
+Total Elements      1458    4187      2.87    1088    2918      2.68
+--------------------------------------------------------------------
+Total Tokens         974    3420      3.51     974    2804      2.88
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 5       0      15      88      5.87
+----------------------------------------------------------
+Local (in)            12      16      61     602      9.87
+TOTAL (in)            17      16      76     690      9.08
+----------------------------------------------------------
+Local (out)            7      16      61      61      1.00
+TOTAL (out)           12      16      76     149      1.96
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/DemonWords/FindWordsThread.lua -> ./controllers/minigames/DemonWords/FindWordsThread_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            28      95      3.39      28      95      3.39
+TK_NAME               87     758      8.71      87     217      2.49
+TK_NUMBER             15      15      1.00      15      15      1.00
+TK_STRING              9     193     21.44       9     193     21.44
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                145     147      1.01     145     147      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             1      48     48.00       0       0      0.00
+TK_LCOMMENT            1      30     30.00       0       0      0.00
+TK_EOL                24      24      1.00       8       8      1.00
+TK_SPACE              71     106      1.49      23      23      1.00
+--------------------------------------------------------------------
+Total Elements       382    1416      3.71     316     698      2.21
+--------------------------------------------------------------------
+Total Tokens         285    1208      4.24     285     667      2.34
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/DemonWords/models/value/FourLettersCombinations.lua -> ./controllers/minigames/DemonWords/models/value/FourLettersCombinations_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             1       6      6.00       1       6      6.00
+TK_NAME                0       0      0.00       0       0      0.00
+TK_NUMBER          12096   12096      1.00   12096   12096      1.00
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP              18145   18145      1.00   18145   18145      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                 0       0      0.00       0       0      0.00
+TK_SPACE               1       1      1.00       0       0      0.00
+--------------------------------------------------------------------
+Total Elements     30244   30248      1.00   30243   30247      1.00
+--------------------------------------------------------------------
+Total Tokens       30243   30247      1.00   30243   30247      1.00
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/DemonWords/models/value/SixLettersCombinations.lua -> ./controllers/minigames/DemonWords/models/value/SixLettersCombinations_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             1       6      6.00       1       6      6.00
+TK_NAME                0       0      0.00       0       0      0.00
+TK_NUMBER         362880  362880      1.00  362880  362880      1.00
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP             483841  483841      1.00  483841  483841      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                 0       0      0.00       0       0      0.00
+TK_SPACE               1       1      1.00       0       0      0.00
+--------------------------------------------------------------------
+Total Elements    846724  846728      1.00  846723  846727      1.00
+--------------------------------------------------------------------
+Total Tokens      846723  846727      1.00  846723  846727      1.00
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 0       0       0       0      0.00
+----------------------------------------------------------
+Local (in)             0       0       0       0      0.00
+TOTAL (in)             0       0       0       0      0.00
+----------------------------------------------------------
+Local (out)            0       0       0       0      0.00
+TOTAL (out)            0       0       0       0      0.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/DemonWords/models/value/FiveLettersCombinations.lua -> ./controllers/minigames/DemonWords/models/value/FiveLettersCombinations_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD             1       6      6.00       1       6      6.00
+TK_NAME                0       0      0.00       0       0      0.00
+TK_NUMBER          75600   75600      1.00   75600   75600      1.00
+TK_STRING              0       0      0.00       0       0      0.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP             105841  105841      1.00  105841  105841      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                 0       0      0.00       0       0      0.00
+TK_SPACE               1       1      1.00       0       0      0.00
+--------------------------------------------------------------------
+Total Elements    181444  181448      1.00  181443  181447      1.00
+--------------------------------------------------------------------
+Total Tokens      181443  181447      1.00  181443  181447      1.00
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                14       0      39     239      6.13
+----------------------------------------------------------
+Local (in)            28      64     243    1249      5.14
+TOTAL (in)            42      64     282    1488      5.28
+----------------------------------------------------------
+Local (out)            8      64     243     492      2.02
+TOTAL (out)           22      64     282     731      2.59
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./controllers/minigames/DemonWords/init.lua -> ./controllers/minigames/DemonWords/init_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           146     541      3.71     146     541      3.71
+TK_NAME              469    3165      6.75     469    2408      5.13
+TK_NUMBER             62     133      2.15      62     128      2.06
+TK_STRING             54     510      9.44      54     510      9.44
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                696     709      1.02     696     709      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             1      23     23.00       0       0      0.00
+TK_LCOMMENT            1      49     49.00       0       0      0.00
+TK_EOL               134     134      1.00      54      54      1.00
+TK_SPACE             539    1000      1.86     102     102      1.00
+--------------------------------------------------------------------
+Total Elements      2103    6264      2.98    1584    4452      2.81
+--------------------------------------------------------------------
+Total Tokens        1428    5058      3.54    1428    4296      3.01
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0       9      93     10.33
+----------------------------------------------------------
+Local (in)            12      16      57     370      6.49
+TOTAL (in)            16      16      66     463      7.02
+----------------------------------------------------------
+Local (out)            3      16      57     108      1.89
+TOTAL (out)            7      16      66     201      3.05
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/SplashScreen.lua -> ./scenes/SplashScreen_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            29     131      4.52      29     131      4.52
+TK_NAME              108     842      7.80     108     580      5.37
+TK_NUMBER             11      15      1.36      11      15      1.36
+TK_STRING              7     125     17.86       7     125     17.86
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                138     138      1.00     138     138      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                50      50      1.00      16      16      1.00
+TK_SPACE             116     258      2.22      18      18      1.00
+--------------------------------------------------------------------
+Total Elements       460    1559      3.39     328    1023      3.12
+--------------------------------------------------------------------
+Total Tokens         294    1251      4.26     294     989      3.36
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                11       0      46     240      5.22
+----------------------------------------------------------
+Local (in)            14      33     120     605      5.04
+TOTAL (in)            25      33     166     845      5.09
+----------------------------------------------------------
+Local (out)            5      33     120     258      2.15
+TOTAL (out)           16      33     166     498      3.00
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/InGameScene.lua -> ./scenes/InGameScene_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD           101     376      3.72     101     376      3.72
+TK_NAME              277    1774      6.40     277    1427      5.15
+TK_NUMBER             47     112      2.38      47     112      2.38
+TK_STRING             27     467     17.30      27     467     17.30
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                386     386      1.00     386     386      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             2      52     26.00       0       0      0.00
+TK_LCOMMENT            1      65     65.00       0       0      0.00
+TK_EOL                92      92      1.00      37      37      1.00
+TK_SPACE             335     599      1.79      72      72      1.00
+--------------------------------------------------------------------
+Total Elements      1269    3923      3.09     948    2877      3.03
+--------------------------------------------------------------------
+Total Tokens         839    3115      3.71     839    2768      3.30
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 8       0      27     268      9.93
+----------------------------------------------------------
+Local (in)            31      64     158    1029      6.51
+TOTAL (in)            39      64     185    1297      7.01
+----------------------------------------------------------
+Local (out)            8      64     158     212      1.34
+TOTAL (out)           16      64     185     480      2.59
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/MainMenuScene.lua -> ./scenes/MainMenuScene_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            66     294      4.45      66     294      4.45
+TK_NAME              281    2094      7.45     281    1277      4.54
+TK_NUMBER             13      25      1.92      13      25      1.92
+TK_STRING             35     522     14.91      35     522     14.91
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                374     377      1.01     374     377      1.01
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             2     104     52.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL               104     104      1.00      26      26      1.00
+TK_SPACE             258     527      2.04      39      39      1.00
+--------------------------------------------------------------------
+Total Elements      1134    4047      3.57     835    2560      3.07
+--------------------------------------------------------------------
+Total Tokens         770    3312      4.30     770    2495      3.24
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 3       0       5      46      9.20
+----------------------------------------------------------
+Local (in)            15      19      46     264      5.74
+TOTAL (in)            18      19      51     310      6.08
+----------------------------------------------------------
+Local (out)            5      19      46      91      1.98
+TOTAL (out)            8      19      51     137      2.69
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/subscenes/GameOver.lua -> ./scenes/subscenes/GameOver_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            24     115      4.79      24     115      4.79
+TK_NAME               74     497      6.72      74     324      4.38
+TK_NUMBER              9      19      2.11       9      19      2.11
+TK_STRING              2      68     34.00       2      68     34.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                 92      94      1.02      92      94      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                30      30      1.00      10      10      1.00
+TK_SPACE              90     130      1.44      21      21      1.00
+--------------------------------------------------------------------
+Total Elements       322     953      2.96     233     651      2.79
+--------------------------------------------------------------------
+Total Tokens         202     793      3.93     202     620      3.07
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 5       0      15      81      5.40
+----------------------------------------------------------
+Local (in)             9      13      93     405      4.35
+TOTAL (in)            14      13     108     486      4.50
+----------------------------------------------------------
+Local (out)            5      13      93     264      2.84
+TOTAL (out)           10      13     108     345      3.19
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/subscenes/CatchNoob.lua -> ./scenes/subscenes/CatchNoob_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            65     241      3.71      65     241      3.71
+TK_NAME              216    1377      6.38     216    1236      5.72
+TK_NUMBER             43      77      1.79      43      74      1.72
+TK_STRING             12     249     20.75      12     249     20.75
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                298     314      1.05     298     314      1.05
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             2      70     35.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                78      78      1.00      33      33      1.00
+TK_SPACE             281     673      2.40      55      55      1.00
+--------------------------------------------------------------------
+Total Elements       996    3079      3.09     723    2202      3.05
+--------------------------------------------------------------------
+Total Tokens         635    2258      3.56     635    2114      3.33
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 4       0       9      83      9.22
+----------------------------------------------------------
+Local (in)             8      10      49     256      5.22
+TOTAL (in)            12      10      58     339      5.84
+----------------------------------------------------------
+Local (out)            5      10      49     124      2.53
+TOTAL (out)            9      10      58     207      3.57
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/subscenes/Letterboard.lua -> ./scenes/subscenes/Letterboard_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            33     138      4.18      33     138      4.18
+TK_NAME              109     661      6.06     109     529      4.85
+TK_NUMBER             17      26      1.53      17      25      1.47
+TK_STRING              4      62     15.50       4      62     15.50
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                136     139      1.02     136     139      1.02
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             1      86     86.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                48      48      1.00      19      19      1.00
+TK_SPACE             129     303      2.35      21      21      1.00
+--------------------------------------------------------------------
+Total Elements       478    1463      3.06     340     933      2.74
+--------------------------------------------------------------------
+Total Tokens         300    1026      3.42     300     893      2.98
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 5       0      14      94      6.71
+----------------------------------------------------------
+Local (in)            14      21      77     364      4.73
+TOTAL (in)            19      21      91     458      5.03
+----------------------------------------------------------
+Local (out)            5      21      77     155      2.01
+TOTAL (out)           10      21      91     249      2.74
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/CreditsScene.lua -> ./scenes/CreditsScene_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            41     169      4.12      41     169      4.12
+TK_NAME              149     939      6.30     149     730      4.90
+TK_NUMBER             17      30      1.76      17      29      1.71
+TK_STRING             15     281     18.73      15     281     18.73
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                191     196      1.03     191     196      1.03
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                69      69      1.00      33      33      1.00
+TK_SPACE             196     438      2.23      26      26      1.00
+--------------------------------------------------------------------
+Total Elements       679    2122      3.13     473    1464      3.10
+--------------------------------------------------------------------
+Total Tokens         414    1615      3.90     414    1405      3.39
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 5       0      14      99      7.07
+----------------------------------------------------------
+Local (in)            15      21      75     461      6.15
+TOTAL (in)            20      21      89     560      6.29
+----------------------------------------------------------
+Local (out)            5      21      75     189      2.52
+TOTAL (out)           10      21      89     288      3.24
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./scenes/PressAnyButton.lua -> ./scenes/PressAnyButton_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            52     212      4.08      52     212      4.08
+TK_NAME              167    1169      7.00     167     897      5.37
+TK_NUMBER             15      26      1.73      15      23      1.53
+TK_STRING             14     592     42.29      14     592     42.29
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                228     229      1.00     228     229      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT             0       0      0.00       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                67      67      1.00      26      26      1.00
+TK_SPACE             186     421      2.26      36      36      1.00
+--------------------------------------------------------------------
+Total Elements       730    2716      3.72     539    2015      3.74
+--------------------------------------------------------------------
+Total Tokens         477    2228      4.67     477    1953      4.09
+--------------------------------------------------------------------
+
+LuaSrcDiet: Puts your Lua 5.1+ source code on a diet
+Version 1.0.0 <https://github.com/jirutka/luasrcdiet>
+
+*** local variable optimization summary ***
+----------------------------------------------------------
+Variable          Unique   Decl.   Token    Size   Average
+Types              Names   Count   Count   Bytes     Bytes
+----------------------------------------------------------
+Global                 1       0       1       4      4.00
+----------------------------------------------------------
+Local (in)             1       1      43      43      1.00
+TOTAL (in)             2       1      44      47      1.07
+----------------------------------------------------------
+Local (out)            1       1      43      43      1.00
+TOTAL (out)            2       1      44      47      1.07
+----------------------------------------------------------
+
+*** SRCEQUIV: token streams are sort of equivalent
+(but no identifier comparisons since --opt-locals enabled)
+
+*** BINEQUIV: binary chunks are sort of equivalent
+
+Statistics for: ./conf.lua -> ./conf_.lua
+
+*** lexer-based optimizations summary ***
+--------------------------------------------------------------------
+Lexical            Input   Input     Input  Output  Output    Output
+Elements           Count   Bytes   Average   Count   Bytes   Average
+--------------------------------------------------------------------
+TK_KEYWORD            33     142      4.30      33     142      4.30
+TK_NAME              122     581      4.76     122     581      4.76
+TK_NUMBER              7      15      2.14       7      15      2.14
+TK_STRING              4      56     14.00       4      56     14.00
+TK_LSTRING             0       0      0.00       0       0      0.00
+TK_OP                122     122      1.00     122     122      1.00
+TK_EOS                 1       0      0.00       1       0      0.00
+--------------------------------------------------------------------
+TK_COMMENT            42    2106     50.14       0       0      0.00
+TK_LCOMMENT            0       0      0.00       0       0      0.00
+TK_EOL                47      47      1.00      38      38      1.00
+TK_SPACE             170     793      4.66       1       1      1.00
+--------------------------------------------------------------------
+Total Elements       548    3862      7.05     328     955      2.91
+--------------------------------------------------------------------
+Total Tokens         289     916      3.17     289     916      3.17
+--------------------------------------------------------------------
+

@@ -10,15 +10,10 @@ Love2d - Um Framework Lua, pode ser encontrado nesse link: https://love2d.org . 
 
 * [João Victor Oliveira Couto](https://github.com/Jictyvoo)
 
-## Metas
-
-* Fazer a fase do homicida, começa com o áudio falando que é homicida
-* Fazer uma fase siderun com o tinker
-* Implementar jogo do Words! (referencia a jogo horroroso)
-* Implementar o final do grande gado. Vira um papai smurf e tem de desvias de obstáculos no caminho
-
 ## Bibliotecas de terceiros
 
 * [MoonJohn](https://github.com/Jictyvoo/MoonJohn)
 * [Sanghost](https://github.com/Jictyvoo/Sanghost)
 * [Pixelurite](https://github.com/Jictyvoo/Pixelurite)
+* [Scribe](https://github.com/smallsco/scribe)
+
